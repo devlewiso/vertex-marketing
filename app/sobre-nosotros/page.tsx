@@ -6,7 +6,7 @@ export default function SobreNosotrosPage() {
       {/* Hero */}
       <section className="relative py-32 overflow-hidden">
         <div className="absolute inset-0 gradient-hero"></div>
-        <div className="absolute inset-0 bg-[url('https://v3b.fal.media/files/b/0aa0ec4e/7vr1eaLQsJCY4y7W_S_Ow.jpg&q=80')] bg-cover bg-center opacity-20"></div>
+        <div className="absolute inset-0 bg-[url('https://v3b.fal.media/files/b/0aa0ec4e/7vr1eaLQsJCY4y7W_S_Ow.jpg')] bg-cover bg-center opacity-20"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <span className="inline-block bg-white/20 backdrop-blur-sm text-white px-6 py-3 rounded-full text-sm font-semibold mb-6">
@@ -186,7 +186,7 @@ export default function SobreNosotrosPage() {
             <div className="grid lg:grid-cols-2">
               <div className="h-96 lg:h-auto relative">
                 <img
-                  src="https://v3b.fal.media/files/b/0aa0ec4e/7vr1eaLQsJCY4y7W_S_Ow.jpg&q=80"
+                  src="https://v3b.fal.media/files/b/0aa0ec4e/7vr1eaLQsJCY4y7W_S_Ow.jpg"
                   alt="Oficinas Vertex Marketing"
                   className="w-full h-full object-cover"
                 />
@@ -267,7 +267,7 @@ export default function SobreNosotrosPage() {
 
       {/* CTA */}
       <section className="py-24 gradient-hero relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://v3b.fal.media/files/b/0aa0ec4e/7vr1eaLQsJCY4y7W_S_Ow.jpg&q=80')] bg-cover bg-center opacity-10"></div>
+        <div className="absolute inset-0 bg-[url('https://v3b.fal.media/files/b/0aa0ec4e/7vr1eaLQsJCY4y7W_S_Ow.jpg')] bg-cover bg-center opacity-10"></div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
             ¿Quieres trabajar con nosotros?

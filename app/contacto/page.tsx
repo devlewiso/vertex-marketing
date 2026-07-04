@@ -23,7 +23,7 @@ export default function ContactoPage() {
       {/* Hero */}
       <section className="relative py-32 overflow-hidden">
         <div className="absolute inset-0 gradient-hero"></div>
-        <div className="absolute inset-0 bg-[url('https://v3b.fal.media/files/b/0aa0ec4e/7vr1eaLQsJCY4y7W_S_Ow.jpg&q=80')] bg-cover bg-center opacity-20"></div>
+        <div className="absolute inset-0 bg-[url('https://v3b.fal.media/files/b/0aa0ec4e/7vr1eaLQsJCY4y7W_S_Ow.jpg')] bg-cover bg-center opacity-20"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <span className="inline-block bg-white/20 backdrop-blur-sm text-white px-6 py-3 rounded-full text-sm font-semibold mb-6">
@@ -209,7 +209,7 @@ export default function ContactoPage() {
                 <h3 className="font-bold text-slate-800 dark:text-white mb-4">Ubicación</h3>
                 <div className="relative h-64 rounded-2xl overflow-hidden">
                   <img
-                    src="https://v3b.fal.media/files/b/0aa0ec4c/uuffZl72MVdVFrJ4RL96-.jpg&q=80"
+                    src="https://v3b.fal.media/files/b/0aa0ec4c/uuffZl72MVdVFrJ4RL96-.jpg"
                     alt="Mapa de ubicación"
                     className="w-full h-full object-cover"
                   />

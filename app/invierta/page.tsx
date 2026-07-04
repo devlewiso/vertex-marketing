@@ -6,7 +6,7 @@ export default function InviertaPage() {
       {/* Hero */}
       <section className="relative py-32 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-emerald-600 via-teal-600 to-cyan-600"></div>
-        <div className="absolute inset-0 bg-[url('https://v3b.fal.media/files/b/0aa0ec4c/uuffZl72MVdVFrJ4RL96-.jpg&q=80')] bg-cover bg-center opacity-20"></div>
+        <div className="absolute inset-0 bg-[url('https://v3b.fal.media/files/b/0aa0ec4c/uuffZl72MVdVFrJ4RL96-.jpg')] bg-cover bg-center opacity-20"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <span className="inline-block bg-white/20 backdrop-blur-sm text-white px-6 py-3 rounded-full text-sm font-semibold mb-6">
@@ -139,7 +139,7 @@ export default function InviertaPage() {
           <div className="relative max-w-[640px] mx-auto">
             <div className="aspect-video bg-slate-900 rounded-3xl overflow-hidden shadow-2xl group cursor-pointer">
               <img
-                src="https://v3b.fal.media/files/b/0aa0ec4c/uuffZl72MVdVFrJ4RL96-.jpg&q=80"
+                src="https://v3b.fal.media/files/b/0aa0ec4c/uuffZl72MVdVFrJ4RL96-.jpg"
                 alt="Video thumbnail"
                 className="w-full h-full object-cover opacity-60 group-hover:opacity-40 transition-opacity"
               />
@@ -318,7 +318,7 @@ export default function InviertaPage() {
 
       {/* CTA Final */}
       <section className="py-24 gradient-hero relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://v3b.fal.media/files/b/0aa0ec4c/uuffZl72MVdVFrJ4RL96-.jpg&q=80')] bg-cover bg-center opacity-10"></div>
+        <div className="absolute inset-0 bg-[url('https://v3b.fal.media/files/b/0aa0ec4c/uuffZl72MVdVFrJ4RL96-.jpg')] bg-cover bg-center opacity-10"></div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
             ¿Interesado en Invertir?

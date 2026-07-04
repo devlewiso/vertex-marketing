@@ -6,7 +6,7 @@ const servicios = [
     titulo: 'Gestión de Redes Sociales',
     descripcion: 'Administración profesional de tus redes sociales. Creamos contenido estratégico, programamos publicaciones y gestionamos la interacción con tu audiencia.',
     beneficios: ['Content Calendar mensual', 'Diseño gráfico personalizado', 'Community Management 24/7', 'Reportes de rendimiento'],
-    imagen: 'https://v3b.fal.media/files/b/0aa0ec46/2U13_gavAKX1B4uK53wiD.jpg&q=80',
+    imagen: 'https://v3b.fal.media/files/b/0aa0ec46/2U13_gavAKX1B4uK53wiD.jpg',
     color: 'from-rose-500 to-pink-500',
   },
   {
@@ -14,7 +14,7 @@ const servicios = [
     titulo: 'SEO y Posicionamiento',
     descripcion: 'Optimizamos tu sitio web para motores de búsqueda. Aumentamos tu visibilidad orgánica y atraemos tráfico calificado.',
     beneficios: ['Auditoría SEO completa', 'Optimización on-page', 'Link building estratégico', 'Monitoreo de rankings'],
-    imagen: 'https://v3b.fal.media/files/b/0aa0ec48/bc0zSkxu3rNMVc1pi79vU.jpg&q=80',
+    imagen: 'https://v3b.fal.media/files/b/0aa0ec48/bc0zSkxu3rNMVc1pi79vU.jpg',
     color: 'from-violet-500 to-purple-500',
   },
   {
@@ -22,7 +22,7 @@ const servicios = [
     titulo: 'Publicidad Digital (SEM)',
     descripcion: 'Campañas publicitarias efectivas en Google Ads, Facebook Ads, Instagram Ads y LinkedIn Ads.',
     beneficios: ['Segmentación avanzada', 'Optimización de ROI', 'A/B testing continuo', 'Reportes detallados'],
-    imagen: 'https://v3b.fal.media/files/b/0aa0ec4a/-Lkc3WGbiZxUtnRybUDZH.jpg&q=80',
+    imagen: 'https://v3b.fal.media/files/b/0aa0ec4a/-Lkc3WGbiZxUtnRybUDZH.jpg',
     color: 'from-cyan-500 to-blue-500',
   },
   {
@@ -30,7 +30,7 @@ const servicios = [
     titulo: 'Email Marketing',
     descripcion: 'Campañas de email marketing que convierten. Desde newsletters hasta automatizaciones de venta.',
     beneficios: ['Diseño responsive', 'Segmentación de audiencia', 'Automatización de flujos', 'Analytics avanzado'],
-    imagen: 'https://v3b.fal.media/files/b/0aa0ec4a/-Lkc3WGbiZxUtnRybUDZH.jpg&q=80',
+    imagen: 'https://v3b.fal.media/files/b/0aa0ec4a/-Lkc3WGbiZxUtnRybUDZH.jpg',
     color: 'from-amber-500 to-orange-500',
   },
   {
@@ -38,7 +38,7 @@ const servicios = [
     titulo: 'Producción de Video',
     descripcion: 'Videos profesionales para redes sociales, publicidad y contenido corporativo.',
     beneficios: ['Guion y storyboard', 'Grabación profesional', 'Edición y post-producción', 'Optimización por plataforma'],
-    imagen: 'https://v3b.fal.media/files/b/0aa0ec4b/YBvWZ2_c0hEK4rInMqe9l.jpg&q=80',
+    imagen: 'https://v3b.fal.media/files/b/0aa0ec4b/YBvWZ2_c0hEK4rInMqe9l.jpg',
     color: 'from-emerald-500 to-teal-500',
   },
   {
@@ -46,7 +46,7 @@ const servicios = [
     titulo: 'Analytics y Reportes',
     descripcion: 'Medición y análisis de datos para tomar decisiones informadas y optimizar tus campañas.',
     beneficios: ['Dashboards personalizados', 'KPIs definidos', 'Insights accionables', 'Reuniones de seguimiento'],
-    imagen: 'https://v3b.fal.media/files/b/0aa0ec4c/uuffZl72MVdVFrJ4RL96-.jpg&q=80',
+    imagen: 'https://v3b.fal.media/files/b/0aa0ec4c/uuffZl72MVdVFrJ4RL96-.jpg',
     color: 'from-fuchsia-500 to-rose-500',
   },
 ];
@@ -57,7 +57,7 @@ export default function ServiciosPage() {
       {/* Hero */}
       <section className="relative py-32 overflow-hidden">
         <div className="absolute inset-0 gradient-hero"></div>
-        <div className="absolute inset-0 bg-[url('https://v3b.fal.media/files/b/0aa0ec4e/7vr1eaLQsJCY4y7W_S_Ow.jpg&q=80')] bg-cover bg-center opacity-20"></div>
+        <div className="absolute inset-0 bg-[url('https://v3b.fal.media/files/b/0aa0ec4e/7vr1eaLQsJCY4y7W_S_Ow.jpg')] bg-cover bg-center opacity-20"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <span className="inline-block bg-white/20 backdrop-blur-sm text-white px-6 py-3 rounded-full text-sm font-semibold mb-6">
@@ -239,7 +239,7 @@ export default function ServiciosPage() {
 
       {/* CTA */}
       <section className="py-24 gradient-hero relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://v3b.fal.media/files/b/0aa0ec4e/7vr1eaLQsJCY4y7W_S_Ow.jpg&q=80')] bg-cover bg-center opacity-10"></div>
+        <div className="absolute inset-0 bg-[url('https://v3b.fal.media/files/b/0aa0ec4e/7vr1eaLQsJCY4y7W_S_Ow.jpg')] bg-cover bg-center opacity-10"></div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
             ¿Necesitas un servicio personalizado?

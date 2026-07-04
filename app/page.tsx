@@ -219,12 +219,12 @@ export default function Home() {
             <div className="relative">
               <div className="grid grid-cols-2 gap-4">
                 <img
-                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400&q=80"
+                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400"
                   alt="Equipo trabajando"
                   className="rounded-3xl shadow-2xl w-full h-64 object-cover"
                 />
                 <img
-                  src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&q=80"
+                  src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=400"
                   alt="Reunión de equipo"
                   className="rounded-3xl shadow-2xl w-full h-64 object-cover mt-8"
                 />
@@ -345,7 +345,7 @@ export default function Home() {
       {/* CTA Final */}
       <section className="py-24 relative overflow-hidden">
         <div className="absolute inset-0 gradient-hero"></div>
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1920&q=80')] bg-cover bg-center opacity-10"></div>
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1920')] bg-cover bg-center opacity-10"></div>
         <div className="absolute inset-0 bg-gradient-to-r from-rose-500/50 to-violet-500/50"></div>
 
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">

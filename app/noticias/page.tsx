@@ -6,7 +6,7 @@ const noticias = [
     fecha: '28 de Junio, 2026',
     categoria: 'Redes Sociales',
     resumen: 'Descubre las últimas tendencias en gestión de redes sociales que estamos implementando para nuestros clientes.',
-    imagen: 'https://v3b.fal.media/files/b/0aa0ec46/2U13_gavAKX1B4uK53wiD.jpg&q=80',
+    imagen: 'https://v3b.fal.media/files/b/0aa0ec46/2U13_gavAKX1B4uK53wiD.jpg',
     color: 'from-rose-500 to-pink-500',
   },
   {
@@ -14,7 +14,7 @@ const noticias = [
     fecha: '25 de Junio, 2026',
     categoria: 'SEO',
     resumen: 'Análisis profundo de cómo la inteligencia artificial está cambiando el panorama del posicionamiento orgánico.',
-    imagen: 'https://v3b.fal.media/files/b/0aa0ec48/bc0zSkxu3rNMVc1pi79vU.jpg&q=80',
+    imagen: 'https://v3b.fal.media/files/b/0aa0ec48/bc0zSkxu3rNMVc1pi79vU.jpg',
     color: 'from-violet-500 to-purple-500',
   },
   {
@@ -22,7 +22,7 @@ const noticias = [
     fecha: '20 de Junio, 2026',
     categoria: 'Publicidad',
     resumen: 'Te contamos cómo logramos triplicar las conversiones de un cliente del sector retail.',
-    imagen: 'https://v3b.fal.media/files/b/0aa0ec4a/-Lkc3WGbiZxUtnRybUDZH.jpg&q=80',
+    imagen: 'https://v3b.fal.media/files/b/0aa0ec4a/-Lkc3WGbiZxUtnRybUDZH.jpg',
     color: 'from-cyan-500 to-blue-500',
   },
   {
@@ -30,7 +30,7 @@ const noticias = [
     fecha: '15 de Junio, 2026',
     categoria: 'Email Marketing',
     resumen: 'Las estadísticas lo confirman: el email marketing tiene el ROI más alto de todos los canales digitales.',
-    imagen: 'https://v3b.fal.media/files/b/0aa0ec4a/-Lkc3WGbiZxUtnRybUDZH.jpg&q=80',
+    imagen: 'https://v3b.fal.media/files/b/0aa0ec4a/-Lkc3WGbiZxUtnRybUDZH.jpg',
     color: 'from-amber-500 to-orange-500',
   },
   {
@@ -38,7 +38,7 @@ const noticias = [
     fecha: '10 de Junio, 2026',
     categoria: 'Video',
     resumen: 'El video corto domina las redes sociales. Aprende cómo aprovechar esta tendencia.',
-    imagen: 'https://v3b.fal.media/files/b/0aa0ec4b/YBvWZ2_c0hEK4rInMqe9l.jpg&q=80',
+    imagen: 'https://v3b.fal.media/files/b/0aa0ec4b/YBvWZ2_c0hEK4rInMqe9l.jpg',
     color: 'from-emerald-500 to-teal-500',
   },
   {
@@ -46,7 +46,7 @@ const noticias = [
     fecha: '5 de Junio, 2026',
     categoria: 'Analytics',
     resumen: 'Cómo usar datos predictivos para anticiparte a las necesidades de tus clientes.',
-    imagen: 'https://v3b.fal.media/files/b/0aa0ec4c/uuffZl72MVdVFrJ4RL96-.jpg&q=80',
+    imagen: 'https://v3b.fal.media/files/b/0aa0ec4c/uuffZl72MVdVFrJ4RL96-.jpg',
     color: 'from-fuchsia-500 to-rose-500',
   },
 ];
@@ -65,7 +65,7 @@ export default function NoticiasPage() {
       {/* Hero */}
       <section className="relative py-32 overflow-hidden">
         <div className="absolute inset-0 gradient-hero-alt"></div>
-        <div className="absolute inset-0 bg-[url('https://v3b.fal.media/files/b/0aa0ec4c/uuffZl72MVdVFrJ4RL96-.jpg&q=80')] bg-cover bg-center opacity-20"></div>
+        <div className="absolute inset-0 bg-[url('https://v3b.fal.media/files/b/0aa0ec4c/uuffZl72MVdVFrJ4RL96-.jpg')] bg-cover bg-center opacity-20"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <span className="inline-block bg-white/20 backdrop-blur-sm text-white px-6 py-3 rounded-full text-sm font-semibold mb-6">
@@ -216,7 +216,7 @@ export default function NoticiasPage() {
 
       {/* Newsletter */}
       <section className="py-24 gradient-hero relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://v3b.fal.media/files/b/0aa0ec4e/7vr1eaLQsJCY4y7W_S_Ow.jpg&q=80')] bg-cover bg-center opacity-10"></div>
+        <div className="absolute inset-0 bg-[url('https://v3b.fal.media/files/b/0aa0ec4e/7vr1eaLQsJCY4y7W_S_Ow.jpg')] bg-cover bg-center opacity-10"></div>
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <div className="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-6">
             <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">

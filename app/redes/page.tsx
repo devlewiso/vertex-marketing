@@ -80,7 +80,7 @@ const postsDestacados = [
     plataforma: 'Instagram',
     titulo: '5 Métricas que debes seguir en 2026',
     desc: 'Descubre las KPIs esenciales para medir el éxito de tus campañas.',
-    imagen: 'https://v3b.fal.media/files/b/0aa0ec45/RHlevCxUfzkZAVp9BgX_p.jpg&q=80',
+    imagen: 'https://v3b.fal.media/files/b/0aa0ec45/RHlevCxUfzkZAVp9BgX_p.jpg',
     color: 'from-pink-500 to-rose-500',
     emoji: '📊',
   },
@@ -88,7 +88,7 @@ const postsDestacados = [
     plataforma: 'LinkedIn',
     titulo: 'Cómo segmentar tu audiencia B2B',
     desc: 'Estrategias efectivas para llegar a tomadores de decisiones.',
-    imagen: 'https://v3b.fal.media/files/b/0aa0ec4e/7vr1eaLQsJCY4y7W_S_Ow.jpg&q=80',
+    imagen: 'https://v3b.fal.media/files/b/0aa0ec4e/7vr1eaLQsJCY4y7W_S_Ow.jpg',
     color: 'from-blue-600 to-cyan-500',
     emoji: '🎯',
   },
@@ -96,7 +96,7 @@ const postsDestacados = [
     plataforma: 'TikTok',
     titulo: 'Trends de marketing para este mes',
     desc: 'Los formatos de video que están dominando las redes.',
-    imagen: 'https://v3b.fal.media/files/b/0aa0ec4b/YBvWZ2_c0hEK4rInMqe9l.jpg&q=80',
+    imagen: 'https://v3b.fal.media/files/b/0aa0ec4b/YBvWZ2_c0hEK4rInMqe9l.jpg',
     color: 'from-slate-800 via-pink-500 to-cyan-400',
     emoji: '🎬',
   },
@@ -108,7 +108,7 @@ export default function RedesPage() {
       {/* Hero */}
       <section className="relative py-32 overflow-hidden">
         <div className="absolute inset-0 gradient-hero-alt"></div>
-        <div className="absolute inset-0 bg-[url('https://v3b.fal.media/files/b/0aa0ec46/2U13_gavAKX1B4uK53wiD.jpg&q=80')] bg-cover bg-center opacity-20"></div>
+        <div className="absolute inset-0 bg-[url('https://v3b.fal.media/files/b/0aa0ec46/2U13_gavAKX1B4uK53wiD.jpg')] bg-cover bg-center opacity-20"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <span className="inline-block bg-white/20 backdrop-blur-sm text-white px-6 py-3 rounded-full text-sm font-semibold mb-6">
@@ -220,7 +220,7 @@ export default function RedesPage() {
 
       {/* Stats Section */}
       <section className="py-24 gradient-hero relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://v3b.fal.media/files/b/0aa0ec46/2U13_gavAKX1B4uK53wiD.jpg&q=80')] bg-cover bg-center opacity-10"></div>
+        <div className="absolute inset-0 bg-[url('https://v3b.fal.media/files/b/0aa0ec46/2U13_gavAKX1B4uK53wiD.jpg')] bg-cover bg-center opacity-10"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
