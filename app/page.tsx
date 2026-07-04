@@ -8,7 +8,7 @@ export default function Home() {
       <section className="relative min-h-screen flex items-center overflow-hidden">
         {/* Background */}
         <div className="absolute inset-0 gradient-hero"></div>
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1920&q=80')] bg-cover bg-center opacity-20"></div>
+        <div className="absolute inset-0 bg-[url('https://v3b.fal.media/files/b/0aa0ec4e/7vr1eaLQsJCY4y7W_S_Ow.jpg')] bg-cover bg-center opacity-20"></div>
 
         {/* Animated Shapes */}
         <div className="absolute top-20 left-10 w-72 h-72 bg-white/10 rounded-full blur-3xl animate-float"></div>
@@ -69,7 +69,7 @@ export default function Home() {
               <div className="relative z-10 animate-float">
                 <div className="glass-dark rounded-3xl p-6 shadow-2xl">
                   <img
-                    src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80"
+                    src="https://v3b.fal.media/files/b/0aa0ec45/RHlevCxUfzkZAVp9BgX_p.jpg"
                     alt="Marketing Dashboard"
                     className="rounded-2xl w-full"
                   />
@@ -136,42 +136,42 @@ export default function Home() {
                 titulo: 'Redes Sociales',
                 descripcion: 'Gestión profesional de tus redes. Contenido estratégico que conecta con tu audiencia.',
                 color: 'from-rose-500 to-pink-500',
-                imagen: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=400&q=80',
+                imagen: 'https://v3b.fal.media/files/b/0aa0ec46/2U13_gavAKX1B4uK53wiD.jpg',
               },
               {
                 icon: '🔍',
                 titulo: 'SEO / SEM',
                 descripcion: 'Posicionamiento orgánico y campañas pagas que maximizan tu ROI.',
                 color: 'from-violet-500 to-purple-500',
-                imagen: 'https://images.unsplash.com/photo-1571721795195-a2ca2d337089?w=400&q=80',
+                imagen: 'https://v3b.fal.media/files/b/0aa0ec48/bc0zSkxu3rNMVc1pi79vU.jpg',
               },
               {
                 icon: '📧',
                 titulo: 'Email Marketing',
                 descripcion: 'Campañas que convierten. Automatizaciones que venden mientras duermes.',
                 color: 'from-cyan-500 to-blue-500',
-                imagen: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=400&q=80',
+                imagen: 'https://v3b.fal.media/files/b/0aa0ec4a/-Lkc3WGbiZxUtnRybUDZH.jpg',
               },
               {
                 icon: '🎬',
                 titulo: 'Video Marketing',
                 descripcion: 'Contenido visual que captura atención y transmite tu mensaje.',
                 color: 'from-amber-500 to-orange-500',
-                imagen: 'https://images.unsplash.com/photo-1536240478700-b869070f9279?w=400&q=80',
+                imagen: 'https://v3b.fal.media/files/b/0aa0ec4b/YBvWZ2_c0hEK4rInMqe9l.jpg',
               },
               {
                 icon: '📊',
                 titulo: 'Analytics',
                 descripcion: 'Datos que se convierten en insights accionables para tu negocio.',
                 color: 'from-emerald-500 to-teal-500',
-                imagen: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&q=80',
+                imagen: 'https://v3b.fal.media/files/b/0aa0ec4c/uuffZl72MVdVFrJ4RL96-.jpg',
               },
               {
                 icon: '🎨',
                 titulo: 'Branding',
                 descripcion: 'Identidad visual que destaca y permanece en la mente de tus clientes.',
                 color: 'from-fuchsia-500 to-rose-500',
-                imagen: 'https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=400&q=80',
+                imagen: 'https://v3b.fal.media/files/b/0aa0ec57/zbrMdDzp4xqa0WaCgLkwB.jpg',
               },
             ].map((servicio, index) => (
               <div
