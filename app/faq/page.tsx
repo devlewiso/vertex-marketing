@@ -81,15 +81,83 @@ const faqs = [
   },
 ];
 
+// Componente de Acordeón Mejorado
+function AccordionItem({
+  faq,
+  isOpen,
+  onToggle,
+  color,
+  index
+}: {
+  faq: { pregunta: string; respuesta: string };
+  isOpen: boolean;
+  onToggle: () => void;
+  color: string;
+  index: number;
+}) {
+  return (
+    <div
+      className={`bg-white dark:bg-slate-900 rounded-2xl shadow-md overflow-hidden transition-all duration-300 ${
+        isOpen ? 'ring-2 ring-offset-2 ring-rose-500 dark:ring-offset-slate-900' : 'hover:shadow-xl'
+      }`}
+    >
+      <button
+        onClick={onToggle}
+        className="w-full px-6 py-5 flex items-center justify-between text-left group"
+      >
+        <div className="flex items-center gap-4 flex-1">
+          <span className={`w-8 h-8 rounded-full bg-gradient-to-r ${color} flex items-center justify-center text-white text-sm font-bold flex-shrink-0 transition-transform duration-300 ${isOpen ? 'scale-110' : 'group-hover:scale-110'}`}>
+            {index + 1}
+          </span>
+          <span className={`font-semibold text-lg transition-colors duration-300 ${
+            isOpen ? 'text-rose-500' : 'text-slate-800 dark:text-white group-hover:text-rose-500'
+          }`}>
+            {faq.pregunta}
+          </span>
+        </div>
+        <div className={`w-10 h-10 rounded-full bg-gradient-to-r ${color} flex items-center justify-center flex-shrink-0 transition-all duration-500 ${
+          isOpen ? 'rotate-180 bg-slate-800' : 'group-hover:scale-110'
+        }`}>
+          <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
+          </svg>
+        </div>
+      </button>
+
+      {/* Contenido con animación slide */}
+      <div
+        className={`overflow-hidden transition-all duration-500 ease-in-out ${
+          isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+        }`}
+      >
+        <div className="px-6 pb-6">
+          <div className="pt-4 border-t border-slate-100 dark:border-slate-700">
+            <div className="flex gap-3">
+              <div className={`w-1 h-full rounded-full bg-gradient-to-b ${color} flex-shrink-0`}></div>
+              <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+                {faq.respuesta}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function FAQPage() {
   const [openIndex, setOpenIndex] = useState<{categoria: number, pregunta: number} | null>(null);
 
   return (
-    <div>
+    <div className="min-h-screen">
       {/* Hero */}
       <section className="relative py-32 overflow-hidden">
         <div className="absolute inset-0 gradient-hero-alt"></div>
-        <div className="absolute inset-0 bg-[url('https://v3b.fal.media/files/b/0aa0ec4e/7vr1eaLQsJCY4y7W_S_Ow.jpg&q=80')] bg-cover bg-center opacity-20"></div>
+        <div className="absolute inset-0 bg-[url('https://v3b.fal.media/files/b/0aa0ec4e/7vr1eaLQsJCY4y7W_S_Ow.jpg')] bg-cover bg-center opacity-20"></div>
+
+        {/* Decorative elements */}
+        <div className="absolute top-20 left-10 w-72 h-72 bg-white/10 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-pink-500/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <span className="inline-block bg-white/20 backdrop-blur-sm text-white px-6 py-3 rounded-full text-sm font-semibold mb-6">
@@ -111,7 +179,7 @@ export default function FAQPage() {
             <input
               type="text"
               placeholder="¿En qué podemos ayudarte? Busca tu pregunta..."
-              className="w-full px-6 py-5 pl-14 rounded-2xl border border-slate-300 dark:border-slate-600 bg-slate-50 dark:bg-slate-800 text-slate-800 dark:text-white focus:ring-2 focus:ring-rose-500 focus:border-transparent transition-all text-lg"
+              className="w-full px-6 py-5 pl-14 rounded-2xl border border-slate-300 dark:border-slate-600 bg-slate-50 dark:bg-slate-800 text-slate-800 dark:text-white focus:ring-2 focus:ring-rose-500 focus:border-transparent transition-all text-lg shadow-sm"
             />
             <svg className="absolute left-5 top-1/2 -translate-y-1/2 w-6 h-6 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -121,50 +189,34 @@ export default function FAQPage() {
       </section>
 
       {/* FAQs por Categoría */}
-      <section className="py-24 bg-slate-50 dark:bg-slate-800">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-24 bg-gradient-to-br from-slate-50 via-white to-slate-50 dark:from-slate-800 dark:via-slate-900 dark:to-slate-800">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           {faqs.map((categoria, catIndex) => (
-            <div key={catIndex} className="mb-12">
-              <div className="flex items-center gap-4 mb-6">
-                <div className={`w-14 h-14 rounded-2xl bg-gradient-to-r ${categoria.color} flex items-center justify-center text-2xl shadow-lg`}>
+            <div key={catIndex} className="mb-16 last:mb-0">
+              {/* Header de categoría */}
+              <div className="flex items-center gap-4 mb-8 sticky top-24 z-10">
+                <div className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${categoria.color} flex items-center justify-center text-3xl shadow-lg transform transition-transform hover:scale-110`}>
                   {categoria.icono}
                 </div>
-                <h2 className="text-2xl font-bold text-slate-800 dark:text-white">{categoria.categoria}</h2>
+                <h2 className="text-3xl font-bold text-slate-800 dark:text-white">{categoria.categoria}</h2>
+                <div className={`flex-1 h-1 rounded-full bg-gradient-to-r ${categoria.color} opacity-50`}></div>
               </div>
 
+              {/* Items del acordeón */}
               <div className="space-y-4">
                 {categoria.items.map((faq, faqIndex) => {
                   const globalIndex = { categoria: catIndex, pregunta: faqIndex };
                   const isOpen = openIndex?.categoria === catIndex && openIndex?.pregunta === faqIndex;
 
                   return (
-                    <div
+                    <AccordionItem
                       key={faqIndex}
-                      className="bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300"
-                    >
-                      <button
-                        onClick={() => setOpenIndex(isOpen ? null : globalIndex)}
-                        className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-slate-50 dark:hover:bg-slate-800 transition"
-                      >
-                        <span className="font-semibold text-slate-800 dark:text-white pr-4 text-lg">
-                          {faq.pregunta}
-                        </span>
-                        <div className={`w-8 h-8 rounded-full bg-gradient-to-r ${categoria.color} flex items-center justify-center flex-shrink-0 transition-transform duration-300 ${isOpen ? 'rotate-45' : ''}`}>
-                          <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
-                          </svg>
-                        </div>
-                      </button>
-                      {isOpen && (
-                        <div className="px-6 pb-6">
-                          <div className="pt-2 border-t border-slate-100 dark:border-slate-700">
-                            <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
-                              {faq.respuesta}
-                            </p>
-                          </div>
-                        </div>
-                      )}
-                    </div>
+                      faq={faq}
+                      isOpen={isOpen}
+                      onToggle={() => setOpenIndex(isOpen ? null : globalIndex)}
+                      color={categoria.color}
+                      index={faqIndex}
+                    />
                   );
                 })}
               </div>
@@ -175,9 +227,9 @@ export default function FAQPage() {
 
       {/* CTA Contacto */}
       <section className="py-24 gradient-hero relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://v3b.fal.media/files/b/0aa0ec4e/7vr1eaLQsJCY4y7W_S_Ow.jpg&q=80')] bg-cover bg-center opacity-10"></div>
+        <div className="absolute inset-0 bg-[url('https://v3b.fal.media/files/b/0aa0ec6f/wCfRCSbrI1DlgNJSTMs7K.jpg')] bg-cover bg-center opacity-10"></div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <div className="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-6">
+          <div className="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-6 animate-float">
             <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
             </svg>
@@ -197,21 +249,21 @@ export default function FAQPage() {
         </div>
       </section>
 
-      {/* Still here? */}
+      {/* Links adicionales */}
       <section className="py-16 bg-white dark:bg-slate-900">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-slate-600 dark:text-slate-400 mb-6">
             ¿No encontraste lo que buscabas?
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <a href="/servicios" className="text-rose-500 hover:text-rose-600 font-semibold transition">
-              Ver servicios →
+            <a href="/servicios" className="text-rose-500 hover:text-rose-600 font-semibold transition flex items-center gap-2">
+              <span>📋</span> Ver servicios
             </a>
-            <a href="/contacto" className="text-violet-500 hover:text-violet-600 font-semibold transition">
-              Hablar con ventas →
+            <a href="/contacto" className="text-violet-500 hover:text-violet-600 font-semibold transition flex items-center gap-2">
+              <span>💬</span> Hablar con ventas
             </a>
-            <a href="/sobre-nosotros" className="text-cyan-500 hover:text-cyan-600 font-semibold transition">
-              Conocer el equipo →
+            <a href="/sobre-nosotros" className="text-cyan-500 hover:text-cyan-600 font-semibold transition flex items-center gap-2">
+              <span>👥</span> Conocer el equipo
             </a>
           </div>
         </div>
