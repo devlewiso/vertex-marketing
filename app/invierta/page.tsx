@@ -56,7 +56,7 @@ export default function InviertaPage() {
               </h2>
               <p className="text-slate-600 dark:text-slate-400 mb-6 text-lg leading-relaxed">
                 El mercado de marketing digital está en constante crecimiento, con una proyección
-                de alcanzar $1.5 billones para 2030. Vertex Marketing está posicionada para
+                de alcanzar Q11.7 mil millones para 2030. Vertex Marketing está posicionada para
                 capitalizar esta tendencia con una trayectoria comprobada de éxito.
               </p>
 
@@ -90,9 +90,9 @@ export default function InviertaPage() {
               <h3 className="text-2xl font-bold mb-8">Proyecciones Financieras</h3>
               <div className="space-y-6">
                 {[
-                  { label: 'Revenue 2024', value: '$1.2M', growth: '+45%' },
-                  { label: 'Proyección 2025', value: '$2.5M', growth: '+108%' },
-                  { label: 'Proyección 2026', value: '$5.0M', growth: '+100%' },
+                  { label: 'Revenue 2024', value: 'Q9.3M', growth: '+45%' },
+                  { label: 'Proyección 2025', value: 'Q19.4M', growth: '+108%' },
+                  { label: 'Proyección 2026', value: 'Q38.8M', growth: '+100%' },
                   { label: 'Margen EBITDA', value: '35%', growth: 'Estable' },
                 ].map((item, i) => (
                   <div key={i} className="flex justify-between items-center border-b border-white/20 pb-4 last:border-0">
@@ -198,7 +198,7 @@ export default function InviertaPage() {
                 nivel: 'A',
                 nombre: 'Inversionista Ángel',
                 desc: 'Para inversionistas individuales interesados en participar en rondas de inversión temprana.',
-                inversion: '$10,000+',
+                inversion: 'Q77,500+',
                 equity: '2-5%',
                 beneficios: ['Reportes trimestrales', 'Derecho a información', 'Actualizaciones mensuales', 'Acceso a dashboard'],
                 color: 'from-slate-500 to-slate-600',
@@ -208,7 +208,7 @@ export default function InviertaPage() {
                 nivel: 'B',
                 nombre: 'Socio Estratégico',
                 desc: 'Para empresas o inversionistas que buscan participación activa y beneficios estratégicos.',
-                inversion: '$50,000+',
+                inversion: 'Q387,500+',
                 equity: '10-20%',
                 beneficios: ['Asiento en advisory board', 'Beneficios de servicios', 'Voto en decisiones', 'Dividendos preferentes'],
                 color: 'from-rose-500 to-pink-500',
@@ -218,7 +218,7 @@ export default function InviertaPage() {
                 nivel: 'C',
                 nombre: 'Franquicia Regional',
                 desc: 'Opera una sucursal de Vertex Marketing en tu región con nuestro respaldo y metodología.',
-                inversion: '$100,000+',
+                inversion: 'Q775,000+',
                 equity: 'Territorio exclusivo',
                 beneficios: ['Territorio exclusivo', 'Training completo', 'Soporte continuo', 'Marketing compartido'],
                 color: 'from-violet-500 to-purple-500',
