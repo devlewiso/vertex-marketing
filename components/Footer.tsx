@@ -152,7 +152,7 @@ export default function Footer() {
               </div>
               <div className="flex gap-3">
                 <a
-                  href="https://github.com/devlewiso/vertex-marketing/blob/master/documentacion/trabajo-formal.html"
+                  href="/documentacion/trabajo-formal.html"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 hover:scale-105 shadow-lg"
@@ -164,7 +164,7 @@ export default function Footer() {
                   Ver Documento HTML
                 </a>
                 <a
-                  href="https://github.com/devlewiso/vertex-marketing/blob/master/documentacion/trabajo-formal.md"
+                  href="/documentacion/trabajo-formal.md"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 border border-white/20"
@@ -172,7 +172,7 @@ export default function Footer() {
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                   </svg>
-                  Ver en GitHub
+                  Descargar MD
                 </a>
               </div>
             </div>
