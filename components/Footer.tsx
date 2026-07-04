@@ -135,6 +135,128 @@ export default function Footer() {
               <Link href="#" className="text-slate-500 hover:text-cyan-400 transition">Cookies</Link>
             </div>
           </div>
+
+          {/* Documentación Formal - Semana 7 */}
+          <div className="border-t border-white/5 mt-6 pt-6">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+              <div className="flex items-center gap-3">
+                <div className="w-8 h-8 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-lg flex items-center justify-center">
+                  <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
+                </div>
+                <div>
+                  <p className="text-slate-400 text-sm font-medium">Trabajo Formal - Semana 7</p>
+                  <p className="text-slate-500 text-xs">Documento completo con las 7 actividades requeridas</p>
+                </div>
+              </div>
+              <div className="flex gap-3">
+                <a
+                  href="/documentacion/trabajo-formal.html"
+                  target="_blank"
+                  className="flex items-center gap-2 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 hover:scale-105 shadow-lg"
+                >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                  </svg>
+                  Ver Documento HTML
+                </a>
+                <a
+                  href="/documentacion/trabajo-formal.md"
+                  target="_blank"
+                  className="flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 border border-white/20"
+                >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                  </svg>
+                  Descargar MD
+                </a>
+              </div>
+            </div>
+
+            {/* Tabla resumen de actividades */}
+            <div className="mt-6 bg-white/5 rounded-2xl p-6 overflow-x-auto">
+              <h4 className="text-slate-300 font-semibold mb-4 text-sm">📋 Actividades Completadas - Semana 7</h4>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b border-white/10">
+                      <th className="text-left text-slate-400 font-medium pb-3 pr-4">#</th>
+                      <th className="text-left text-slate-400 font-medium pb-3 pr-4">Actividad</th>
+                      <th className="text-left text-slate-400 font-medium pb-3 pr-4">Estado</th>
+                      <th className="text-left text-slate-400 font-medium pb-3">Ubicación</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-slate-300">
+                    <tr className="border-b border-white/5">
+                      <td className="py-3 pr-4 text-slate-500">1</td>
+                      <td className="py-3 pr-4">Propuesta de Negocio (5 capítulos)</td>
+                      <td className="py-3 pr-4"><span className="inline-flex items-center gap-1.5 text-emerald-400"><span className="w-2 h-2 bg-emerald-400 rounded-full"></span>Completado</span></td>
+                      <td className="py-3 pr-4 text-slate-400">trabajo-formal.md - pág. 4-13</td>
+                    </tr>
+                    <tr className="border-b border-white/5">
+                      <td className="py-3 pr-4 text-slate-500">2</td>
+                      <td className="py-3 pr-4">Comparativa de Hosting (3 opciones)</td>
+                      <td className="py-3 pr-4"><span className="inline-flex items-center gap-1.5 text-emerald-400"><span className="w-2 h-2 bg-emerald-400 rounded-full"></span>Completado</span></td>
+                      <td className="py-3 pr-4 text-slate-400">trabajo-formal.md - pág. 14-16</td>
+                    </tr>
+                    <tr className="border-b border-white/5">
+                      <td className="py-3 pr-4 text-slate-500">3</td>
+                      <td className="py-3 pr-4">Nombre y Dominio (verificación)</td>
+                      <td className="py-3 pr-4"><span className="inline-flex items-center gap-1.5 text-emerald-400"><span className="w-2 h-2 bg-emerald-400 rounded-full"></span>Completado</span></td>
+                      <td className="py-3 pr-4 text-slate-400">trabajo-formal.md - pág. 17-19</td>
+                    </tr>
+                    <tr className="border-b border-white/5">
+                      <td className="py-3 pr-4 text-slate-500">4</td>
+                      <td className="py-3 pr-4">Dominio .gt (procedimiento y costo)</td>
+                      <td className="py-3 pr-4"><span className="inline-flex items-center gap-1.5 text-emerald-400"><span className="w-2 h-2 bg-emerald-400 rounded-full"></span>Completado</span></td>
+                      <td className="py-3 pr-4 text-slate-400">trabajo-formal.md - pág. 20-21</td>
+                    </tr>
+                    <tr className="border-b border-white/5">
+                      <td className="py-3 pr-4 text-slate-500">5</td>
+                      <td className="py-3 pr-4">Pasarelas de Pago (PayPal, PayNexus, etc.)</td>
+                      <td className="py-3 pr-4"><span className="inline-flex items-center gap-1.5 text-emerald-400"><span className="w-2 h-2 bg-emerald-400 rounded-full"></span>Completado</span></td>
+                      <td className="py-3 pr-4 text-slate-400">trabajo-formal.md - pág. 22-26</td>
+                    </tr>
+                    <tr className="border-b border-white/5">
+                      <td className="py-3 pr-4 text-slate-500">6</td>
+                      <td className="py-3 pr-4">Vínculos del Grupo (página 2*)</td>
+                      <td className="py-3 pr-4"><span className="inline-flex items-center gap-1.5 text-emerald-400"><span className="w-2 h-2 bg-emerald-400 rounded-full"></span>Completado</span></td>
+                      <td className="py-3 pr-4 text-slate-400">trabajo-formal.md - pág. 27</td>
+                    </tr>
+                    <tr>
+                      <td className="py-3 pr-4 text-slate-500">7</td>
+                      <td className="py-3 pr-4">Bibliografía APA</td>
+                      <td className="py-3 pr-4"><span className="inline-flex items-center gap-1.5 text-emerald-400"><span className="w-2 h-2 bg-emerald-400 rounded-full"></span>Completado</span></td>
+                      <td className="py-3 pr-4 text-slate-400">trabajo-formal.md - pág. 28-29</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              {/* Resumen de cumplimiento */}
+              <div className="mt-4 flex flex-wrap gap-4 text-xs">
+                <div className="flex items-center gap-2 bg-emerald-500/20 border border-emerald-500/30 px-4 py-2 rounded-full">
+                  <span className="text-emerald-400 font-bold">85%</span>
+                  <span className="text-emerald-300">Cumplimiento Total</span>
+                </div>
+                <div className="flex items-center gap-2 bg-blue-500/20 border border-blue-500/30 px-4 py-2 rounded-full">
+                  <span className="text-blue-400 font-bold">Q26,686</span>
+                  <span className="text-blue-300">Inversión Inicial</span>
+                </div>
+                <div className="flex items-center gap-2 bg-purple-500/20 border border-purple-500/30 px-4 py-2 rounded-full">
+                  <span className="text-purple-400 font-bold">9 clientes</span>
+                  <span className="text-purple-300">Punto de Equilibrio</span>
+                </div>
+                <div className="flex items-center gap-2 bg-amber-500/20 border border-amber-500/30 px-4 py-2 rounded-full">
+                  <span className="text-amber-400 font-bold">23%</span>
+                  <span className="text-amber-300">Utilidad Neta</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <p className="text-center text-slate-600 text-xs mt-4">
             Creada por rcm 15 febrero de 2017 - versión 1.0
           </p>
