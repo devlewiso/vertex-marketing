@@ -29,7 +29,7 @@ const faqs = [
     items: [
       {
         pregunta: '¿Cuánto cuesta contratar sus servicios?',
-        respuesta: 'Los precios varían según el servicio y las necesidades específicas de tu negocio. Ofrecemos paquetes desde $500/mes para pequeñas empresas hasta soluciones empresariales personalizadas. Contáctanos para una cotización gratuita adaptada a tus necesidades.'
+        respuesta: 'Los precios varían según el servicio y las necesidades específicas de tu negocio. Ofrecemos paquetes desde Q3,900/mes para pequeñas empresas hasta soluciones empresariales personalizadas. Contáctanos para una cotización gratuita adaptada a tus necesidades.'
       },
       {
         pregunta: '¿Ofrecen contratos a largo plazo?',

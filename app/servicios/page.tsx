@@ -170,7 +170,7 @@ export default function ServiciosPage() {
             {[
               {
                 nombre: 'Startup',
-                precio: '$500',
+                precio: 'Q3,900',
                 desc: 'Para negocios que comienzan',
                 features: ['3 Redes Sociales', '8 Posts/mes', 'Reporte mensual', 'Soporte por email'],
                 color: 'from-slate-500 to-slate-600',
@@ -178,7 +178,7 @@ export default function ServiciosPage() {
               },
               {
                 nombre: 'Business',
-                precio: '$1,200',
+                precio: 'Q9,360',
                 desc: 'El más popular',
                 features: ['6 Redes Sociales', '20 Posts/mes', 'Campañas Ads', 'Reporte quincenal', 'Soporte prioritario'],
                 color: 'from-rose-500 to-pink-500',
@@ -186,7 +186,7 @@ export default function ServiciosPage() {
               },
               {
                 nombre: 'Enterprise',
-                precio: '$2,500',
+                precio: 'Q19,500',
                 desc: 'Soluciones completas',
                 features: ['Redes ilimitadas', 'Posts ilimitados', 'Todas las campañas', 'Reporte semanal', 'Manager dedicado', 'Reuniones semanales'],
                 color: 'from-violet-500 to-purple-500',
