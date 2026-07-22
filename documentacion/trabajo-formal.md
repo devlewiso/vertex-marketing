@@ -466,20 +466,10 @@ Se investigaron tres opciones de hosting para alojar el sitio web de Vertex Mark
 ### Verificación de Disponibilidad de Dominios
 
 #### 1. Dominio .com
-
-**Estado:** ❌ **NO DISPONIBLE**
-
-**Registrado por:** Domain Privacy Service
-**Fecha de registro:** 15 de marzo de 2018
-**Fecha de expiración:** 15 de marzo de 2027
-**Registrar:** GoDaddy.com, LLC
-
-**Costo de registro anual (si estuviera disponible):** $12.99/año = **Q100.67/año**
-
-**Alternativas disponibles:** 
-- vertexmarketingagency.com
-- vertexmarketinggt.com
-- vertexmarketing.com.gt
+**Estado:** ✅ **DISPONIBLE**
+**Dominio Seleccionado:** vertex-m.com
+**Costo de registro anual:** $12.99/año = **Q100.67/año**
+**Sugerencia:** Se ha seleccionado este dominio por ser corto, profesional y fácil de recordar.
 
 #### 2. Dominio .net
 
