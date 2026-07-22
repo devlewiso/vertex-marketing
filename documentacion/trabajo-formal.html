@@ -1,1419 +1,501 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vertex Marketing - Trabajo Formal Semana 7</title>
-    <style>
-        @page {
-            margin: 2.54cm;
-            size: letter;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Times New Roman', Times, serif;
-            font-size: 12pt;
-            line-height: 1.5;
-            color: #000;
-            background: #fff;
-            max-width: 8.5in;
-            margin: 0 auto;
-            padding: 2.54cm;
-        }
-
-        .page-break {
-            page-break-after: always;
-            break-after: page;
-        }
-
-        h1, h2, h3, h4 {
-            font-family: 'Arial', sans-serif;
-            margin-top: 1em;
-            margin-bottom: 0.5em;
-        }
-
-        h1 {
-            font-size: 18pt;
-            text-align: center;
-            font-weight: bold;
-        }
-
-        h2 {
-            font-size: 16pt;
-            font-weight: bold;
-            border-bottom: 2px solid #333;
-            padding-bottom: 0.5em;
-        }
-
-        h3 {
-            font-size: 14pt;
-            font-weight: bold;
-        }
-
-        h4 {
-            font-size: 12pt;
-            font-weight: bold;
-        }
-
-        p {
-            margin-bottom: 1em;
-            text-align: justify;
-        }
-
-        .caratula {
-            text-align: center;
-            padding: 3cm 0;
-        }
-
-        .caratula h1 {
-            font-size: 24pt;
-            margin-bottom: 2cm;
-        }
-
-        .caratula-info {
-            margin: 2cm 0;
-        }
-
-        .caratula-info p {
-            text-align: center;
-            margin: 0.5em 0;
-        }
-
-        .integrantes-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 2cm auto;
-        }
-
-        .integrantes-table th,
-        .integrantes-table td {
-            border: 1px solid #000;
-            padding: 12px;
-            text-align: center;
-        }
-
-        .integrantes-table th {
-            background: #f0f0f0;
-            font-weight: bold;
-        }
-
-        .tabla-contenido {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        .tabla-contenido th,
-        .tabla-contenido td {
-            border: 1px solid #000;
-            padding: 10px;
-            text-align: left;
-        }
-
-        .tabla-contenido th {
-            background: #f0f0f0;
-        }
-
-        .tabla-contenido td:last-child {
-            text-align: right;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1em 0;
-        }
-
-        table th,
-        table td {
-            border: 1px solid #000;
-            padding: 10px;
-            text-align: left;
-        }
-
-        table th {
-            background: #f0f0f0;
-            font-weight: bold;
-        }
-
-        table tr:nth-child(even) {
-            background: #f9f9f9;
-        }
-
-        .actividad-header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 15px 20px;
-            border-radius: 8px;
-            margin: 2em 0 1em 0;
-        }
-
-        .actividad-header h2 {
-            border: none;
-            color: white;
-            margin: 0;
-        }
-
-        .prompt-box {
-            background: #f5f5f5;
-            border-left: 4px solid #667eea;
-            padding: 15px 20px;
-            margin: 1em 0;
-            font-family: 'Courier New', monospace;
-            font-size: 10pt;
-        }
-
-        .conclusion-item,
-        .recomendacion-item {
-            margin: 1em 0;
-            padding-left: 1em;
-        }
-
-        .conclusion-item strong,
-        .recomendacion-item strong {
-            font-weight: bold;
-        }
-
-        ul, ol {
-            margin-left: 2em;
-            margin-bottom: 1em;
-        }
-
-        li {
-            margin-bottom: 0.5em;
-        }
-
-        .firma-section {
-            margin-top: 3cm;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .firma-line {
-            border-top: 1px solid #000;
-            width: 40%;
-            text-align: center;
-            padding-top: 0.5em;
-        }
-
-        .watermark {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) rotate(-45deg);
-            font-size: 100pt;
-            color: rgba(0, 0, 0, 0.05);
-            z-index: -1;
-            pointer-events: none;
-        }
-
-        .header-decorativo {
-            background: linear-gradient(135deg, #f43f5e 0%, #8b5cf6 50%, #06b6d4 100%);
-            height: 10px;
-            margin: -2.54cm -2.54cm 2cm -2.54cm;
-        }
-
-        .footer-decorativo {
-            background: linear-gradient(135deg, #06b6d4 0%, #8b5cf6 50%, #f43f5e 100%);
-            height: 10px;
-            margin: 2cm -2.54cm -2.54cm -2.54cm;
-        }
-
-        .estado-disponible {
-            color: #059669;
-            font-weight: bold;
-        }
-
-        .estado-no-disponible {
-            color: #dc2626;
-            font-weight: bold;
-        }
-
-        .estado-limitado {
-            color: #d97706;
-            font-weight: bold;
-        }
-
-        code {
-            background: #f5f5f5;
-            padding: 2px 6px;
-            border-radius: 3px;
-            font-family: 'Courier New', monospace;
-        }
-
-        .nota-importante {
-            background: #fef3c7;
-            border: 2px solid #f59e0b;
-            padding: 15px;
-            border-radius: 8px;
-            margin: 1em 0;
-        }
-
-        .nota-importante strong {
-            color: #92400e;
-        }
-
-        @media print {
-            body {
-                padding: 0;
-                margin: 0;
-            }
-
-            .header-decorativo,
-            .footer-decorativo {
-                margin: 0;
-            }
-
-            .actividad-header {
-                background: #667eea !important;
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-            }
-        }
-    </style>
-</head>
-<body>
-    <div class="header-decorativo"></div>
-
-    <!-- CARÁTULA -->
-    <div class="caratula">
-        <h1>Universidad de San Carlos de Guatemala<br>Facultad de Ciencias Económicas<br>Escuela de Administración de Empresas</h1>
-
-        <div class="caratula-info">
-            <p><strong>Curso:</strong> Comercio Electrónico</p>
-            <p><strong>Tema:</strong> Sitio Web de Negocios - Vertex Marketing</p>
-            <p><strong>Actividad:</strong> Semana 7 - Actividad 1 de 2</p>
-            <p><strong>Catedrático:</strong> [Nombre del Tutor]</p>
-            <p><strong>Fecha de Entrega:</strong> [Fecha]</p>
-        </div>
-
-        <h3>Integrantes del Grupo:</h3>
-        <table class="integrantes-table">
-            <thead>
-                <tr>
-                    <th>No.</th>
-                    <th>Nombre del Integrante</th>
-                    <th>Carné</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>[Nombre del Integrante 1]</td>
-                    <td>[Carné]</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>[Nombre del Integrante 2]</td>
-                    <td>[Carné]</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>[Nombre del Integrante 3]</td>
-                    <td>[Carné]</td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>[Nombre del Integrante 4]</td>
-                    <td>[Carné]</td>
-                </tr>
-                <tr>
-                    <td>5</td>
-                    <td>[Nombre del Integrante 5]</td>
-                    <td>[Carné]</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <p style="margin-top: 3cm;"><strong>Ciudad de Guatemala, Guatemala</strong></p>
-    </div>
-
-    <div class="page-break"></div>
-
-    <!-- TABLA DE CONTENIDO -->
-    <h2>Tabla de Contenido</h2>
-    <table class="tabla-contenido">
-        <thead>
-            <tr>
-                <th>Sección</th>
-                <th>Página</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr><td>Carátula</td><td>1</td></tr>
-            <tr><td>Tabla de Contenido</td><td>2</td></tr>
-            <tr><td>Introducción</td><td>3</td></tr>
-            <tr><td><strong>Actividad 1:</strong> Propuesta de Negocio</td><td>4</td></tr>
-            <tr><td><strong>Actividad 2:</strong> Comparativa de Hosting</td><td>14</td></tr>
-            <tr><td><strong>Actividad 3:</strong> Nombre y Dominio</td><td>17</td></tr>
-            <tr><td><strong>Actividad 4:</strong> Dominio .gt</td><td>20</td></tr>
-            <tr><td><strong>Actividad 5:</strong> Pasarelas de Pago</td><td>22</td></tr>
-            <tr><td><strong>Actividad 6:</strong> Vínculos del Grupo</td><td>27</td></tr>
-            <tr><td><strong>Actividad 7:</strong> Bibliografía APA</td><td>28</td></tr>
-            <tr><td>Conclusiones</td><td>30</td></tr>
-            <tr><td>Recomendaciones</td><td>31</td></tr>
-        </tbody>
-    </table>
-
-    <div class="page-break"></div>
-
-    <!-- INTRODUCCIÓN -->
-    <h2>Introducción</h2>
-    <p>El presente documento tiene como objetivo desarrollar el trabajo formal correspondiente a la Semana 7 del curso de Comercio Electrónico, específicamente la Actividad 1 de 2: "Publicar sitio de negocios en internet".</p>
-
-    <p>En este trabajo se presenta <strong>Vertex Marketing</strong>, una agencia de marketing digital que ofrece servicios profesionales de gestión de redes sociales, SEO, SEM, email marketing, producción de video y analytics. El sitio web fue desarrollado utilizando el framework Next.js 16, con un diseño moderno y colorido que sigue los principios de Max Pro UI.</p>
-
-    <p>El documento está estructurado en 7 actividades que cubren todos los aspectos requeridos para el establecimiento de un negocio digital, desde la propuesta inicial hasta los aspectos técnicos de implementación, incluyendo hosting, dominios, pasarelas de pago y la documentación formal del proyecto.</p>
-
-    <p>Vertex Marketing nace como respuesta a la creciente demanda de servicios de marketing digital en el mercado guatemalteco, donde las pequeñas y medianas empresas buscan profesionalizar su presencia online para competir en el entorno digital actual.</p>
-
-    <div class="page-break"></div>
-
-    <!-- ACTIVIDAD 1 -->
-    <div class="actividad-header">
-        <h2>Actividad 1: Propuesta de Negocio</h2>
-    </div>
-
-    <h3>Esquema Inicial de la Idea de Negocio</h3>
-
-    <h4>Capítulo 1: Resumen Ejecutivo</h4>
-    <p><strong>Vertex Marketing</strong> es una agencia de marketing digital que ofrece servicios integrales para empresas establecer y fortalecer su presencia en internet. Nuestra propuesta de valor se centra en ofrecer soluciones 360° que abarcan desde la gestión de redes sociales hasta el análisis de datos para la toma de decisiones.</p>
-
-    <p><strong>Misión:</strong> Proporcionar estrategias de marketing digital innovadoras y efectivas que impulsen el crecimiento de nuestros clientes.</p>
-
-    <p><strong>Visión:</strong> Ser la agencia de marketing digital líder en Guatemala, reconocida por nuestra creatividad, resultados medibles y compromiso con el éxito del cliente.</p>
-
-    <p><strong>Valores:</strong></p>
-    <ul>
-        <li>Innovación constante</li>
-        <li>Transparencia en resultados</li>
-        <li>Compromiso con el cliente</li>
-        <li>Creatividad sin límites</li>
-        <li>Orientación a resultados</li>
-    </ul>
-
-    <h4>Capítulo 2: Descripción del Negocio</h4>
-
-    <h5>2.1 Naturaleza del Negocio</h5>
-    <p>Vertex Marketing opera como una agencia de servicios digitales, lo que significa que no requiere inventario físico ni infraestructura costosa. Nuestro principal activo es el conocimiento y la creatividad de nuestro equipo.</p>
-
-    <h5>2.2 Servicios Ofrecidos</h5>
-    <table>
-        <thead>
-            <tr>
-                <th>Servicio</th>
-                <th>Descripción</th>
-                <th>Precio Base</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Gestión de Redes Sociales</td>
-                <td>Content calendar, diseño gráfico, community management</td>
-                <td>$500/mes</td>
-            </tr>
-            <tr>
-                <td>SEO y Posicionamiento</td>
-                <td>Auditoría, optimización on-page, link building</td>
-                <td>$700/mes</td>
-            </tr>
-            <tr>
-                <td>Publicidad Digital (SEM)</td>
-                <td>Campañas en Google Ads, Facebook Ads, Instagram Ads</td>
-                <td>15% de inversión</td>
-            </tr>
-            <tr>
-                <td>Email Marketing</td>
-                <td>Diseño, segmentación, automatización</td>
-                <td>$400/mes</td>
-            </tr>
-            <tr>
-                <td>Producción de Video</td>
-                <td>Guion, grabación, edición, post-producción</td>
-                <td>$300/video</td>
-            </tr>
-            <tr>
-                <td>Analytics y Reportes</td>
-                <td>Dashboards, KPIs, insights accionables</td>
-                <td>$350/mes</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <h5>2.3 Modelo de Negocio</h5>
-    <p>Nuestro modelo de ingresos se basa en:</p>
-    <ol>
-        <li><strong>Retainers mensuales</strong> para servicios continuos (redes sociales, SEO, email marketing)</li>
-        <li><strong>Proyectos puntuales</strong> para producciones específicas (videos, branding)</li>
-        <li><strong>Comisiones por gestión</strong> de publicidad pagada</li>
-    </ol>
-
-    <h4>Capítulo 3: Análisis de Mercado</h4>
-
-    <h5>3.1 Mercado Objetivo</h5>
-    <p><strong>Segmento Principal:</strong> Pequeñas y medianas empresas (PYMES) en Guatemala</p>
-
-    <p><strong>Características del Target:</strong></p>
-    <ul>
-        <li>Empresas con facturación anual entre $50,000 y $500,000</li>
-        <li>Sectores: retail, servicios profesionales, gastronomía, educación</li>
-        <li>Edad del decisor: 25-55 años</li>
-        <li>Nivel de digitalización: básico a intermedio</li>
-        <li>Presupuesto mensual para marketing: $500 - $5,000</li>
-    </ul>
-
-    <h5>3.2 Competencia</h5>
-    <table>
-        <thead>
-            <tr>
-                <th>Competidor</th>
-                <th>Fortalezas</th>
-                <th>Debilidades</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Agencias tradicionales</td>
-                <td>Experiencia, cartera establecida</td>
-                <td>Precios altos, poca flexibilidad</td>
-            </tr>
-            <tr>
-                <td>Freelancers</td>
-                <td>Precios bajos, atención personalizada</td>
-                <td>Capacidad limitada, servicios básicos</td>
-            </tr>
-            <tr>
-                <td>Agencias internacionales</td>
-                <td>Tecnología avanzada, casos de éxito</td>
-                <td>Costos elevados, sin presencia local</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <h5>3.3 Ventaja Competitiva</h5>
-    <ol>
-        <li><strong>Precios competitivos</strong> adaptados al mercado local</li>
-        <li><strong>Servicios integrales</strong> en un solo lugar</li>
-        <li><strong>Reportes transparentes</strong> con métricas claras</li>
-        <li><strong>Atención personalizada</strong> con manager dedicado</li>
-        <li><strong>Tecnología de punta</strong> sin costos de agencia grande</li>
-    </ol>
-
-    <h4>Capítulo 4: Plan de Marketing</h4>
-
-    <h5>4.1 Estrategia de Producto</h5>
-    <p>Vertex Marketing ofrece un portafolio de servicios complementarios que permiten al cliente:</p>
-    <ul>
-        <li>Contratar servicios individuales según necesidad</li>
-        <li>Adquirir paquetes integrados con descuento</li>
-        <li>Escalar servicios según crecimiento del negocio</li>
-    </ul>
-
-    <h5>4.2 Estrategia de Precios</h5>
-    <p>Nuestra estrategia de precios se basa en:</p>
-    <ul>
-        <li><strong>Penetración de mercado:</strong> Precios competitivos para ganar cuota</li>
-        <li><strong>Valor percibido:</strong> Enfocados en ROI del cliente</li>
-        <li><strong>Flexibilidad:</strong> Planes escalables según presupuesto</li>
-    </ul>
-
-    <p><strong>Paquetes Disponibles:</strong></p>
-    <table>
-        <thead>
-            <tr>
-                <th>Plan</th>
-                <th>Precio</th>
-                <th>Incluye</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Startup</td>
-                <td>$500/mes</td>
-                <td>3 redes, 8 posts/mes, reporte mensual</td>
-            </tr>
-            <tr>
-                <td>Business</td>
-                <td>$1,200/mes</td>
-                <td>6 redes, 20 posts/mes, campañas ads, reporte quincenal</td>
-            </tr>
-            <tr>
-                <td>Enterprise</td>
-                <td>$2,500/mes</td>
-                <td>Redes ilimitadas, todos los servicios, manager dedicado</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <h5>4.3 Estrategia de Promoción</h5>
-    <ol>
-        <li><strong>Marketing de Contenidos:</strong> Blog semanal con tips de marketing</li>
-        <li><strong>Redes Sociales:</strong> Presencia activa en Instagram, LinkedIn, Facebook</li>
-        <li><strong>SEO:</strong> Posicionamiento para keywords locales</li>
-        <li><strong>Publicidad Pagada:</strong> Google Ads y Facebook Ads</li>
-        <li><strong>Referidos:</strong> Programa de recompensas por clientes referidos</li>
-    </ol>
-
-    <h5>4.4 Estrategia de Distribución</h5>
-    <p>Al ser un negocio digital, la distribución es 100% online:</p>
-    <ul>
-        <li>Sitio web como principal canal de captación</li>
-        <li>Videoconferencias para reuniones con clientes</li>
-        <li>Plataformas de gestión para seguimiento de proyectos</li>
-        <li>Email y WhatsApp para comunicación diaria</li>
-    </ul>
-
-    <h4>Capítulo 5: Plan Operativo y Financiero</h4>
-
-    <h5>5.1 Estructura Operativa</h5>
-    <p><strong>Recursos Humanos Iniciales:</strong></p>
-    <ul>
-        <li>1 Director de Cuenta</li>
-        <li>2 Community Managers</li>
-        <li>1 Especialista SEO/SEM</li>
-        <li>1 Diseñador Gráfico</li>
-        <li>1 Editor de Video (freelance)</li>
-    </ul>
-
-    <p><strong>Tecnología Requerida:</strong></p>
-    <ul>
-        <li>Hosting web y dominio</li>
-        <li>Herramientas de gestión (Trello, Asana)</li>
-        <li>Software de diseño (Adobe Creative Cloud)</li>
-        <li>Herramientas de analytics (Google Analytics, SEMrush)</li>
-        <li>Plataforma de email marketing (Mailchimp/ActiveCampaign)</li>
-    </ul>
-
-    <h5>5.2 Inversión Inicial</h5>
-    <table>
-        <thead>
-            <tr>
-                <th>Concepto</th>
-                <th>Costo</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Desarrollo del sitio web</td>
-                <td>$0 (desarrollo interno)</td>
-            </tr>
-            <tr>
-                <td>Hosting anual</td>
-                <td>$35.88 (Hostinger Premium)</td>
-            </tr>
-            <tr>
-                <td>Dominio anual</td>
-                <td>$15.00</td>
-            </tr>
-            <tr>
-                <td>Herramientas de software</td>
-                <td>$200/mes</td>
-            </tr>
-            <tr>
-                <td>Marketing inicial</td>
-                <td>$500</td>
-            </tr>
-            <tr>
-                <td><strong>Total Inversión Inicial</strong></td>
-                <td><strong>$750.88</strong></td>
-            </tr>
-        </tbody>
-    </table>
-
-    <h5>5.3 Proyección de Ventas</h5>
-    <p><strong>Año 1:</strong></p>
-    <ul>
-        <li>Mes 1-3: 5 clientes (promedio $800/mes) = $4,000/mes</li>
-        <li>Mes 4-6: 10 clientes = $8,000/mes</li>
-        <li>Mes 7-12: 15 clientes = $12,000/mes</li>
-    </ul>
-    <p><strong>Ingreso Anual Proyectado:</strong> $120,000</p>
-
-    <h5>5.4 Punto de Equilibrio</h5>
-    <table>
-        <thead>
-            <tr>
-                <th>Concepto</th>
-                <th>Mensual</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Costos Fijos</td>
-                <td>$2,500</td>
-            </tr>
-            <tr>
-                <td>Costos Variables (20%)</td>
-                <td>20% de ventas</td>
-            </tr>
-            <tr>
-                <td>Precio Promedio por Cliente</td>
-                <td>$800</td>
-            </tr>
-        </tbody>
-    </table>
-    <p><strong>Punto de Equilibrio:</strong> 4 clientes mensuales</p>
-
-    <h3>Prompt de IA Utilizado</h3>
-    <div class="prompt-box">
-        <p>Crea una propuesta de negocio para una agencia de marketing digital llamada "Vertex Marketing" que ofrezca servicios de redes sociales, SEO, SEM, email marketing, producción de video y analytics.</p>
-        <p>La propuesta debe incluir:</p>
-        <ul>
-            <li>Resumen ejecutivo con misión, visión y valores</li>
-            <li>Descripción detallada de servicios y precios</li>
-            <li>Análisis de mercado con target y competencia</li>
-            <li>Estrategia de marketing (4 P's)</li>
-            <li>Plan operativo y financiero con proyecciones</li>
-        </ul>
-        <p>El mercado objetivo son PYMES en Guatemala. Los precios deben ser competitivos para el mercado local. El formato debe ser profesional y listo para presentar a inversores.</p>
-    </div>
-
-    <h3>Mejora Realizada con IA</h3>
-    <p>Después de consultar con el tutor sobre el uso de IA, se realizaron las siguientes mejoras:</p>
-    <ol>
-        <li><strong>Estructuración por capítulos</strong> según el libro de texto del curso</li>
-        <li><strong>Adición de tablas comparativas</strong> para servicios y competencia</li>
-        <li><strong>Inclusión de métricas específicas</strong> (punto de equilibrio, proyecciones)</li>
-        <li><strong>Refinamiento del modelo de precios</strong> basado en investigación de mercado local</li>
-        <li><strong>Adición de estrategia de promoción</strong> multicanal</li>
-    </ol>
-
-    <div class="page-break"></div>
-
-    <!-- ACTIVIDAD 2 -->
-    <div class="actividad-header">
-        <h2>Actividad 2: Comparativa de Hosting</h2>
-    </div>
-
-    <p>Se investigaron tres opciones de hosting para alojar el sitio web de Vertex Marketing:</p>
-
-    <h3>Opción 1: Hostinger</h3>
-    <table>
-        <thead>
-            <tr>
-                <th>Característica</th>
-                <th>Detalle</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr><td><strong>Plan</strong></td><td>Premium</td></tr>
-            <tr><td><strong>Precio Promocional</strong></td><td>$2.99/mes</td></tr>
-            <tr><td><strong>Precio de Renovación</strong></td><td>$10.99/mes</td></tr>
-            <tr><td><strong>Sitios Web</strong></td><td>Hasta 3 sitios</td></tr>
-            <tr><td><strong>Almacenamiento</strong></td><td>20 GB SSD</td></tr>
-            <tr><td><strong>Ancho de Banda</strong></td><td>Ilimitado</td></tr>
-            <tr><td><strong>SSL</strong></td><td>Gratis incluido</td></tr>
-            <tr><td><strong>Dominio</strong></td><td>1 año gratis</td></tr>
-            <tr><td><strong>Email Corporativo</strong></td><td>Gratis incluido</td></tr>
-            <tr><td><strong>Soporte</strong></td><td>24/7 en español</td></tr>
-        </tbody>
-    </table>
-    <p><strong>Fuente:</strong> <a href="https://www.hostinger.com/web-hosting" target="_blank">https://www.hostinger.com/web-hosting</a></p>
-
-    <h3>Opción 2: Alligator</h3>
-    <table>
-        <thead>
-            <tr>
-                <th>Característica</th>
-                <th>Detalle</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr><td><strong>Plan</strong></td><td>Plus</td></tr>
-            <tr><td><strong>Precio Promocional</strong></td><td>Gratis*</td></tr>
-            <tr><td><strong>Precio de Renovación</strong></td><td>$15.99/mes</td></tr>
-            <tr><td><strong>Sitios Web</strong></td><td>Ilimitados</td></tr>
-            <tr><td><strong>Almacenamiento</strong></td><td>20 GB SSD</td></tr>
-            <tr><td><strong>Ancho de Banda</strong></td><td>Ilimitado</td></tr>
-            <tr><td><strong>SSL</strong></td><td>Gratis incluido</td></tr>
-            <tr><td><strong>CDN</strong></td><td>Incluido</td></tr>
-            <tr><td><strong>Email Corporativo</strong></td><td>Incluido</td></tr>
-            <tr><td><strong>Soporte</strong></td><td>24/7</td></tr>
-        </tbody>
-    </table>
-    <p><small>*Promocional con renovación automática a precio regular</small></p>
-    <p><strong>Fuente:</strong> <a href="https://alligatortool.com/hosting/shared" target="_blank">https://alligatortool.com/hosting/shared</a></p>
-
-    <h3>Opción 3: Vercel</h3>
-    <table>
-        <thead>
-            <tr>
-                <th>Característica</th>
-                <th>Detalle</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr><td><strong>Plan</strong></td><td>Hobby</td></tr>
-            <tr><td><strong>Precio</strong></td><td>Gratis</td></tr>
-            <tr><td><strong>Renovación</strong></td><td>Gratis (sin costo de renovación)</td></tr>
-            <tr><td><strong>Requests</strong></td><td>1 millón/mes</td></tr>
-            <tr><td><strong>Transferencia</strong></td><td>100 GB/mes</td></tr>
-            <tr><td><strong>Ancho de Banda</strong></td><td>100 GB</td></tr>
-            <tr><td><strong>SSL</strong></td><td>Gratis incluido</td></tr>
-            <tr><td><strong>Dominio</strong></td><td>*.vercel.app (subdominio)</td></tr>
-            <tr><td><strong>Ideal para</strong></td><td>Aplicaciones Next.js</td></tr>
-            <tr><td><strong>Soporte</strong></td><td>Comunidad</td></tr>
-        </tbody>
-    </table>
-    <p><strong>Fuente:</strong> <a href="https://vercel.com/pricing" target="_blank">https://vercel.com/pricing</a></p>
-
-    <h3>Comparativa de Relación Precio/Servicio</h3>
-    <table>
-        <thead>
-            <tr>
-                <th>Hosting</th>
-                <th>Costo Anual (promo)</th>
-                <th>Costo Anual (renovación)</th>
-                <th>Mejor Para</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr><td>Hostinger</td><td>$35.88</td><td>$131.88</td><td>Sitios pequeños, principiantes</td></tr>
-            <tr><td>Alligator</td><td>$0*</td><td>$191.88</td><td>Múltiples sitios, crecimiento</td></tr>
-            <tr><td>Vercel</td><td>$0</td><td>$0</td><td>Aplicaciones Next.js, developers</td></tr>
-        </tbody>
-    </table>
-
-    <h3>Decisión Seleccionada</h3>
-    <p><strong>Hosting Principal:</strong> Hostinger Premium</p>
-    <p><strong>Razones de la selección:</strong></p>
-    <ol>
-        <li>Precio accesible para el primer año ($35.88)</li>
-        <li>Incluye dominio gratis por 1 año</li>
-        <li>Soporte en español 24/7</li>
-        <li>Fácil de usar para principiantes</li>
-        <li>Certificado SSL incluido</li>
-    </ol>
-
-    <p><strong>Hosting para Deploy Automático:</strong> Vercel</p>
-    <p><strong>Razones:</strong></p>
-    <ol>
-        <li>Completamente gratis sin costos ocultos</li>
-        <li>Optimizado para Next.js (nuestro framework)</li>
-        <li>Deploy automático desde GitHub</li>
-        <li>CDN global incluido</li>
-        <li>SSL automático</li>
-    </ol>
-
-    <div class="page-break"></div>
-
-    <!-- ACTIVIDAD 3 -->
-    <div class="actividad-header">
-        <h2>Actividad 3: Nombre y Dominio</h2>
-    </div>
-
-    <h3>Nombre Seleccionado: <strong>Vertex Marketing</strong></h3>
-
-    <h4>Verificación de Disponibilidad de Dominios</h4>
-
-    <h5>1. Dominio .com</h5>
-    <p><strong>Estado:</strong> <span class="estado-no-disponible">❌ NO DISPONIBLE</span></p>
-    <p><strong>Registrado por:</strong> Domain Privacy Service<br>
-    <strong>Fecha de registro:</strong> 15 de marzo de 2018<br>
-    <strong>Fecha de expiración:</strong> 15 de marzo de 2027<br>
-    <strong>Registrar:</strong> GoDaddy.com, LLC</p>
-    <p><strong>Costo de registro anual (si estuviera disponible):</strong> $12.99/año</p>
-    <p><strong>Alternativa disponible:</strong> vertexmarketingagency.com, vertexmarketinggt.com</p>
-
-    <h5>2. Dominio .net</h5>
-    <p><strong>Estado:</strong> <span class="estado-disponible">✅ DISPONIBLE</span></p>
-    <p><strong>Costo de registro anual:</strong> $14.99/año<br>
-    <strong>Renovación:</strong> $17.99/año</p>
-
-    <h5>3. Dominio .io</h5>
-    <p><strong>Estado:</strong> <span class="estado-disponible">✅ DISPONIBLE</span></p>
-    <p><strong>Costo de registro anual:</strong> $39.99/año<br>
-    <strong>Renovación:</strong> $49.99/año</p>
-
-    <h5>4. Dominio .co</h5>
-    <p><strong>Estado:</strong> <span class="estado-disponible">✅ DISPONIBLE</span></p>
-    <p><strong>Costo de registro anual:</strong> $24.99/año<br>
-    <strong>Renovación:</strong> $32.99/año</p>
-
-    <h5>5. Dominio .marketing</h5>
-    <p><strong>Estado:</strong> <span class="estado-disponible">✅ DISPONIBLE</span></p>
-    <p><strong>Costo de registro anual:</strong> $32.99/año<br>
-    <strong>Renovación:</strong> $32.99/año</p>
-
-    <h5>6. Dominio .agency</h5>
-    <p><strong>Estado:</strong> <span class="estado-disponible">✅ DISPONIBLE</span></p>
-    <p><strong>Costo de registro anual:</strong> $22.99/año<br>
-    <strong>Renovación:</strong> $24.99/año</p>
-
-    <h4>Resumen de Disponibilidad</h4>
-    <table>
-        <thead>
-            <tr>
-                <th>Dominio</th>
-                <th>Estado</th>
-                <th>Costo Anual</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr><td>vertexmarketing.com</td><td><span class="estado-no-disponible">❌ Ocupado</span></td><td>N/A</td></tr>
-            <tr><td>vertexmarketing.net</td><td><span class="estado-disponible">✅ Disponible</span></td><td>$14.99</td></tr>
-            <tr><td>vertexmarketing.io</td><td><span class="estado-disponible">✅ Disponible</span></td><td>$39.99</td></tr>
-            <tr><td>vertexmarketing.co</td><td><span class="estado-disponible">✅ Disponible</span></td><td>$24.99</td></tr>
-            <tr><td>vertexmarketing.marketing</td><td><span class="estado-disponible">✅ Disponible</span></td><td>$32.99</td></tr>
-            <tr><td>vertex-m.com</td><td><span class="estado-disponible">✅ Disponible</span></td><td>$22.99</td></tr>
-        </tbody>
-    </table>
-
-    <h4>Recomendación</h4>
-    <p><strong>Dominio seleccionado:</strong> vertex-m.com</p>
-    <p><strong>Razones:</strong></p>
-    <ol>
-        <li>Específico para el tipo de negocio (agencia)</li>
-        <li>Precio razonable ($22.99/año)</li>
-        <li>Fácil de recordar y escribir</li>
-        <li>Profesional y descriptivo</li>
-    </ol>
-
-    <div class="page-break"></div>
-
-    <!-- ACTIVIDAD 4 -->
-    <div class="actividad-header">
-        <h2>Actividad 4: Dominio .gt (Guatemala)</h2>
-    </div>
-
-    <h3>Procedimiento Legal para Registro de Dominio .gt</h3>
-    <p>El registro de dominios .gt en Guatemala está administrado por <strong>GT Registry</strong>, dependiente de la Universidad del Valle de Guatemala (UVG).</p>
-
-    <h4>Requisitos para Registro</h4>
-
-    <h5>Personas Jurídicas (Empresas):</h5>
-    <ul>
-        <li>Registro Mercantil vigente</li>
-        <li>NIT de la empresa</li>
-        <li>Documento de identificación del representante legal</li>
-        <li>Carta de autorización firmada por el representante legal</li>
-    </ul>
-
-    <h5>Personas Individales:</h5>
-    <ul>
-        <li>DPI o cédula de vecindad</li>
-        <li>NIT vigente</li>
-        <li>Formulario de solicitud completado</li>
-    </ul>
-
-    <h4>Procedimiento Paso a Paso</h4>
-    <ol>
-        <li><strong>Verificar disponibilidad</strong> en <a href="https://www.gt" target="_blank">www.gt</a></li>
-        <li><strong>Crear cuenta</strong> en el portal de GT Registry</li>
-        <li><strong>Completar formulario</strong> de registro de dominio</li>
-        <li><strong>Subir documentación</strong> requerida (PDF)</li>
-        <li><strong>Realizar pago</strong> de la tarifa</li>
-        <li><strong>Esperar aprobación</strong> (2-5 días hábiles)</li>
-        <li><strong>Configurar DNS</strong> una vez aprobado</li>
-    </ol>
-
-    <h4>Costos del Dominio .gt</h4>
-    <table>
-        <thead>
-            <tr>
-                <th>Concepto</th>
-                <th>Costo</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr><td><strong>Tarifa de Registro</strong></td><td>Q. 400.00</td></tr>
-            <tr><td><strong>Mantenimiento Anual</strong></td><td>Q. 400.00</td></tr>
-            <tr><td><strong>Transferencia</strong></td><td>Q. 400.00</td></tr>
-            <tr><td><strong>Cambio de DNS</strong></td><td>Gratis</td></tr>
-        </tbody>
-    </table>
-    <p><strong>Equivalente en USD:</strong> Aproximadamente $52.00 USD al año</p>
-
-    <h4>Ventajas del Dominio .gt</h4>
-    <ol>
-        <li><strong>Identidad local:</strong> Reconocido como sitio guatemalteco</li>
-        <li><strong>SEO local:</strong> Mejor posicionamiento en búsquedas desde Guatemala</li>
-        <li><strong>Confianza:</strong> Mayor credibilidad para clientes locales</li>
-        <li><strong>Protección de marca:</strong> Evita que otros registren tu nombre en .gt</li>
-    </ol>
-
-    <h4>Desventajas</h4>
-    <ol>
-        <li><strong>Precio más elevado</strong> que dominios internacionales</li>
-        <li><strong>Requiere documentación</strong> legal para registro</li>
-        <li><strong>Proceso más lento</strong> de aprobación (2-5 días)</li>
-        <li><strong>Menos flexible</strong> para cambios de titularidad</li>
-    </ol>
-
-    <h4>Decisión Final</h4>
-    <p><strong>Estrategia de dominios recomendada:</strong></p>
-    <ol>
-        <li><strong>Dominio principal:</strong> vertex-m.com ($22.99/año)<br>
-        <em>Para el sitio web global y presencia internacional</em></li>
-        <li><strong>Dominio local:</strong> vertexmarketing.gt (Q. 400/año)<br>
-        <em>Para redireccionar al sitio principal y proteger la marca en el mercado guatemalteco</em></li>
-    </ol>
-    <p><strong>Costo total anual de dominios:</strong> $74.99 USD</p>
-
-    <div class="page-break"></div>
-
-    <!-- ACTIVIDAD 5 -->
-    <div class="actividad-header">
-        <h2>Actividad 5: Pasarelas de Pago</h2>
-    </div>
-
-    <h3>1. PayPal</h3>
-
-    <h4>Descripción</h4>
-    <p>PayPal es una plataforma de pagos en línea que permite a personas y empresas recibir y enviar pagos de forma segura.</p>
-
-    <h4>Funcionamiento</h4>
-    <ol>
-        <li><strong>Creación de cuenta:</strong>
-            <ul>
-                <li>Registrarse en www.paypal.com</li>
-                <li>Verificar email y número de teléfono</li>
-                <li>Vincular cuenta bancaria o tarjeta de crédito</li>
-            </ul>
-        </li>
-        <li><strong>Para recibir pagos:</strong>
-            <ul>
-                <li>Generar enlace de pago o botón de PayPal</li>
-                <li>Integrar en sitio web con API o plugins</li>
-                <li>Los clientes pagan con su cuenta PayPal o tarjeta</li>
-            </ul>
-        </li>
-        <li><strong>Para retirar fondos:</strong>
-            <ul>
-                <li>Transferir a cuenta bancaria vinculada</li>
-                <li>Solicitar cheque (opcional)</li>
-                <li>Usar saldo para compras online</li>
-            </ul>
-        </li>
-    </ol>
-
-    <h4>Comisiones</h4>
-    <table>
-        <thead>
-            <tr>
-                <th>Tipo de Transacción</th>
-                <th>Comisión</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr><td>Ventas nacionales</td><td>3.9% + $0.30</td></tr>
-            <tr><td>Ventas internacionales</td><td>4.4% + $0.30</td></tr>
-            <tr><td>Transferencia a banco</td><td>Gratis</td></tr>
-            <tr><td>Conversión de moneda</td><td>3-4% del tipo de cambio</td></tr>
-        </tbody>
-    </table>
-
-    <h4>Ventajas</h4>
-    <ul>
-        <li>Ampliamente reconocido y usado</li>
-        <li>Fácil de integrar</li>
-        <li>Protección al comprador y vendedor</li>
-        <li>Disponible en más de 200 países</li>
-    </ul>
-
-    <h4>Desventajas</h4>
-    <ul>
-        <li>Comisiones relativamente altas</li>
-        <li>Congelamiento de fondos en casos de disputa</li>
-        <li>No disponible para todos los tipos de negocio</li>
-    </ul>
-
-    <h4>Disponibilidad en Guatemala</h4>
-    <p><span class="estado-disponible">✅ Disponible</span> para cuentas personales y empresariales</p>
-
-    <div class="page-break"></div>
-
-    <h3>2. PayNexus</h3>
-
-    <h4>Descripción</h4>
-    <p>PayNexus es una pasarela de pago centroamericana que permite procesar pagos con tarjetas de crédito y débito locales e internacionales.</p>
-
-    <h4>Funcionamiento</h4>
-    <ol>
-        <li><strong>Registro:</strong>
-            <ul>
-                <li>Crear cuenta en www.paynexus.com</li>
-                <li>Enviar documentación de la empresa</li>
-                <li>Esperar aprobación (2-3 días)</li>
-            </ul>
-        </li>
-        <li><strong>Integración:</strong>
-            <ul>
-                <li>API REST para desarrolladores</li>
-                <li>Plugins para WooCommerce, Shopify, etc.</li>
-                <li>Botones de pago predefinidos</li>
-            </ul>
-        </li>
-        <li><strong>Procesamiento:</strong>
-            <ul>
-                <li>Cliente ingresa datos de tarjeta</li>
-                <li>PayNexus procesa con el banco emisor</li>
-                <li>Fondos se depositan en cuenta del comerciante</li>
-            </ul>
-        </li>
-    </ol>
-
-    <h4>Comisiones</h4>
-    <table>
-        <thead>
-            <tr>
-                <th>Tipo de Transacción</th>
-                <th>Comisión</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr><td>Tarjetas nacionales</td><td>2.5%</td></tr>
-            <tr><td>Tarjetas internacionales</td><td>3.5%</td></tr>
-            <tr><td>Transferencia bancaria</td><td>Q. 5.00</td></tr>
-            <tr><td>Cuota mensual</td><td>$15.00</td></tr>
-        </tbody>
-    </table>
-
-    <h4>Ventajas</h4>
-    <ul>
-        <li>Empresa centroamericana con soporte local</li>
-        <li>Acepta tarjetas de bancos guatemaltecos</li>
-        <li>Pagos en quetzales y dólares</li>
-        <li>Integración sencilla</li>
-    </ul>
-
-    <h4>Desventajas</h4>
-    <ul>
-        <li>Menos conocido internacionalmente</li>
-        <li>Requiere cuenta empresarial</li>
-        <li>Cuota mensual fija</li>
-    </ul>
-
-    <h4>Disponibilidad en Guatemala</h4>
-    <p><span class="estado-disponible">✅ Disponible</span> - Empresa con presencia en Centroamérica</p>
-
-    <div class="page-break"></div>
-
-    <h3>3. ClickBank</h3>
-
-    <h4>Descripción</h4>
-    <p>ClickBank es una plataforma de comercio electrónico especializada en productos digitales y programas de afiliados.</p>
-
-    <h4>Funcionamiento</h4>
-    <ol>
-        <li><strong>Registro como Vendedor:</strong>
-            <ul>
-                <li>Crear cuenta en www.clickbank.com</li>
-                <li>Registrar producto digital</li>
-                <li>Configurar comisión para afiliados</li>
-            </ul>
-        </li>
-        <li><strong>Procesamiento de pagos:</strong>
-            <ul>
-                <li>ClickBank maneja toda la transacción</li>
-                <li>Distribuye comisiones automáticamente</li>
-                <li>Paga al vendedor semanal o quincenalmente</li>
-            </ul>
-        </li>
-        <li><strong>Para afiliados:</strong>
-            <ul>
-                <li>Registrarse como afiliado</li>
-                <li>Seleccionar productos para promover</li>
-                <li>Recibir enlace único de afiliado</li>
-                <li>Ganar comisión por cada venta</li>
-            </ul>
-        </li>
-    </ol>
-
-    <h4>Comisiones</h4>
-    <table>
-        <thead>
-            <tr>
-                <th>Concepto</th>
-                <th>Comisión</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr><td>Cuota de activación</td><td>$49.95 (única)</td></tr>
-            <tr><td>Comisión por venta</td><td>7.5% + $1.00</td></tr>
-            <tr><td>Pago a afiliados</td><td>Variable (lo define el vendedor)</td></tr>
-            <tr><td>Retiro mínimo</td><td>$50.00</td></tr>
-        </tbody>
-    </table>
-
-    <h4>Ventajas</h4>
-    <ul>
-        <li>Especializado en productos digitales</li>
-        <li>Red de afiliados integrada</li>
-        <li>Pagos automáticos a afiliados</li>
-        <li>Protección contra fraudes</li>
-    </ul>
-
-    <h4>Desventajas</h4>
-    <ul>
-        <li>Enfocado solo en productos digitales</li>
-        <li>Cuota de activación inicial</li>
-        <li>Comisiones más altas que otras plataformas</li>
-        <li>No ideal para servicios</li>
-    </ul>
-
-    <h4>Disponibilidad en Guatemala</h4>
-    <p><span class="estado-limitado">⚠️ Disponible con limitaciones</span> - Acepta vendedores internacionales pero con restricciones</p>
-
-    <div class="page-break"></div>
-
-    <h3>4. ClickAndBuy</h3>
-
-    <h4>Descripción</h4>
-    <p>ClickAndBuy fue una pasarela de pago europea que permitía transacciones online sin compartir datos de tarjeta. <strong>Cerró operaciones en 2016.</strong></p>
-
-    <h4>Situación Actual</h4>
-    <p><strong>Estado:</strong> <span class="estado-no-disponible">❌ NO OPERATIVO</span></p>
-    <p>ClickAndBuy fue adquirida por Wirecard y posteriormente cerrada. Los usuarios fueron migrados a otras plataformas.</p>
-
-    <h4>Alternativas Similares</h4>
-    <table>
-        <thead>
-            <tr>
-                <th>Alternativa</th>
-                <th>Descripción</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr><td><strong>Skrill</strong></td><td>Billetera digital europea, similar funcionalidad</td></tr>
-            <tr><td><strong>Neteller</strong></td><td>Billetera digital del mismo grupo que Skrill</td></tr>
-            <tr><td><strong>Payoneer</strong></td><td>Plataforma de pagos internacionales</td></tr>
-            <tr><td><strong>Stripe</strong></td><td>Pasarela de pago para negocios online</td></tr>
-        </tbody>
-    </table>
-
-    <h4>Recomendación para Vertex Marketing</h4>
-    <div class="nota-importante">
-        <p><strong>Nota:</strong> Dado que ClickAndBuy ya no existe, las opciones recomendadas para Guatemala son:</p>
-        <ol>
-            <li><strong>PayPal</strong> - Para pagos internacionales y clientes individuales</li>
-            <li><strong>PayNexus</strong> - Para pagos locales con tarjetas guatemaltecas</li>
-            <li><strong>Stripe</strong> - Si se requiere una solución más completa (no disponible directamente en GT, requiere empresa en EE.UU.)</li>
-        </ol>
-    </div>
-
-    <div class="page-break"></div>
-
-    <!-- ACTIVIDAD 6 -->
-    <div class="actividad-header">
-        <h2>Actividad 6: Vínculos del Grupo</h2>
-    </div>
-
-    <h3>Actividad 1 de Internet</h3>
-    <p>A continuación se presentan los vínculos a los sitios publicados por cada integrante del grupo:</p>
-
-    <table>
-        <thead>
-            <tr>
-                <th>No.</th>
-                <th>Nombre</th>
-                <th>Blog</th>
-                <th>Video</th>
-                <th>Sitio Web</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>1</td>
-                <td>[Nombre Integrante 1]</td>
-                <td>[URL del Blog]</td>
-                <td>[URL del Video]</td>
-                <td>[URL del Sitio]</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>[Nombre Integrante 2]</td>
-                <td>[URL del Blog]</td>
-                <td>[URL del Video]</td>
-                <td>[URL del Sitio]</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>[Nombre Integrante 3]</td>
-                <td>[URL del Blog]</td>
-                <td>[URL del Video]</td>
-                <td>[URL del Sitio]</td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>[Nombre Integrante 4]</td>
-                <td>[URL del Blog]</td>
-                <td>[URL del Video]</td>
-                <td>[URL del Sitio]</td>
-            </tr>
-            <tr>
-                <td>5</td>
-                <td>[Nombre Integrante 5]</td>
-                <td>[URL del Blog]</td>
-                <td>[URL del Video]</td>
-                <td>[URL del Sitio]</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <h4>Sitio Web Grupal</h4>
-    <p><strong>URL:</strong> <a href="https://github.com/devlewiso/vertex-marketing" target="_blank">https://github.com/devlewiso/vertex-marketing</a></p>
-    <p><strong>Deploy en Vercel:</strong> <a href="https://vertex-marketing.vercel.app" target="_blank">https://vertex-marketing.vercel.app</a></p>
-
-    <div class="page-break"></div>
-
-    <!-- ACTIVIDAD 7 -->
-    <div class="actividad-header">
-        <h2>Actividad 7: Bibliografía (Formato APA)</h2>
-    </div>
-
-    <h3>Referencias Bibliográficas</h3>
-
-    <h4>Libros y Textos</h4>
-    <p>Laudon, K. C., & Traver, C. G. (2021). <em>E-commerce: Business, Technology, Society</em> (17th ed.). Pearson Education.</p>
-    <p>Chaffey, D., & Ellis-Chadwick, F. (2019). <em>Digital Marketing: Strategy, Implementation and Practice</em> (7th ed.). Pearson.</p>
-    <p>Kingsnorth, S. (2022). <em>Digital Marketing Strategy: An Integrated Approach to Online Marketing</em> (3rd ed.). Kogan Page.</p>
-
-    <h4>Sitios Web Consultados</h4>
-    <p>Hostinger. (2024). <em>Web Hosting Plans</em>. https://www.hostinger.com/web-hosting</p>
-    <p>Alligator. (2024). <em>Shared Hosting</em>. https://alligatortool.com/hosting/shared</p>
-    <p>Vercel. (2024). <em>Pricing Plans</em>. https://vercel.com/pricing</p>
-    <p>GT Registry. (2024). <em>Registro de Dominios .gt</em>. https://www.gt</p>
-    <p>PayPal. (2024). <em>Comisiones y Tarifas</em>. https://www.paypal.com/gt/webapps/mpp/paypal-fees</p>
-    <p>PayNexus. (2024). <em>Soluciones de Pago</em>. https://www.paynexus.com</p>
-    <p>ClickBank. (2024). <em>Vendor Information</em>. https://www.clickbank.com</p>
-    <p>Next.js. (2024). <em>Documentation</em>. https://nextjs.org/docs</p>
-    <p>Tailwind CSS. (2024). <em>Documentation</em>. https://tailwindcss.com/docs</p>
-    <p>fal.ai. (2024). <em>API Documentation</em>. https://fal.ai/docs</p>
-
-    <h4>Artículos y Publicaciones</h4>
-    <p>Statista. (2024). <em>Digital Marketing in Latin America - Market Report 2024</em>. https://www.statista.com/outlook/digital-marketing/latin-america</p>
-    <p>Google. (2024). <em>Think with Google: Marketing Insights</em>. https://www.thinkwithgoogle.com/intl/es-419/</p>
-    <p>HubSpot. (2024). <em>Estado del Marketing Digital 2024</em>. https://www.hubspot.com/state-of-marketing</p>
-
-    <h4>Recursos de Desarrollo</h4>
-    <p>GitHub. (2024). <em>Repository: vertex-marketing</em>. https://github.com/devlewiso/vertex-marketing</p>
-    <p>Vercel. (2024). <em>Deploying Next.js Applications</em>. https://vercel.com/docs/deployments/nextjs</p>
-    <p>MDN Web Docs. (2024). <em>HTML & CSS Reference</em>. https://developer.mozilla.org/es/</p>
-
-    <div class="page-break"></div>
-
-    <!-- CONCLUSIONES -->
-    <h2>Conclusiones</h2>
-
-    <div class="conclusion-item">
-        <p><strong>1.</strong> Vertex Marketing representa una oportunidad de negocio viable en el mercado guatemalteco de marketing digital, con una inversión inicial accesible ($750.88) y un punto de equilibrio alcanzable (4 clientes mensuales).</p>
-    </div>
-
-    <div class="conclusion-item">
-        <p><strong>2.</strong> La selección de Hostinger como hosting principal y Vercel para deploy automático permite tener una infraestructura robusta con costos mínimos durante el primer año de operaciones.</p>
-    </div>
-
-    <div class="conclusion-item">
-        <p><strong>3.</strong> El nombre Vertex Marketing está disponible en múltiples extensiones de dominio, siendo <code>.agency</code> la opción más adecuada por su relevancia al tipo de negocio y precio razonable.</p>
-    </div>
-
-    <div class="conclusion-item">
-        <p><strong>4.</strong> Para el mercado guatemalteco, es recomendable registrar tanto el dominio internacional (.agency) como el local (.gt) para proteger la marca y mejorar el posicionamiento SEO local.</p>
-    </div>
-
-    <div class="conclusion-item">
-        <p><strong>5.</strong> Las pasarelas de pago PayPal y PayNexus son las opciones más viables para operar en Guatemala, cubriendo tanto pagos internacionales como locales con tarjetas de bancos guatemaltecos.</p>
-    </div>
-
-    <div class="conclusion-item">
-        <p><strong>6.</strong> El uso de IA para la generación de la propuesta de negocio permitió estructurar de manera eficiente el plan inicial, aunque requirió supervisión y ajuste según los lineamientos del curso.</p>
-    </div>
-
-    <div class="conclusion-item">
-        <p><strong>7.</strong> El desarrollo del sitio web con Next.js 16 y diseño Max Pro UI proporciona una base tecnológica moderna y escalable para el crecimiento futuro del negocio.</p>
-    </div>
-
-    <div class="page-break"></div>
-
-    <!-- RECOMENDACIONES -->
-    <h2>Recomendaciones</h2>
-
-    <div class="recomendacion-item">
-        <p><strong>1.</strong> Para los integrantes del grupo: Completar la información de la carátula con los nombres reales y carnés de cada integrante, así como las URLs reales de los blogs y videos individuales una vez publicados.</p>
-    </div>
-
-    <div class="recomendacion-item">
-        <p><strong>2.</strong> Para el sitio web: Grabar el video de 1 minuto para la página "Invierta" con todos los integrantes del grupo, explicando las oportunidades de inversión en Vertex Marketing.</p>
-    </div>
-
-    <div class="recomendacion-item">
-        <p><strong>3.</strong> Para los blogs individuales: Cada integrante debe crear su blog personal y publicar contenido durante 1 semana (bitácora) vinculado a la página de Noticias del sitio grupal.</p>
-    </div>
-
-    <div class="recomendacion-item">
-        <p><strong>4.</strong> Para el hosting: Registrar el dominio seleccionado (vertex-m.com) una vez el proyecto sea aprobado, para asegurar la disponibilidad del nombre.</p>
-    </div>
-
-    <div class="recomendacion-item">
-        <p><strong>5.</strong> Para las pasarelas de pago: Crear las cuentas empresariales en PayPal y PayNexus con la documentación legal de la empresa una vez constituida formalmente.</p>
-    </div>
-
-    <div class="recomendacion-item">
-        <p><strong>6.</strong> Para el documento formal: Exportar este documento a Google Docs, formatear según las normas APA (márgenes, interlineado, fuente Times New Roman 12pt), y compartir a los correos indicados (rcmcomercioelectronico@gmail.com).</p>
-    </div>
-
-    <div class="recomendacion-item">
-        <p><strong>7.</strong> Para futuras iteraciones: Considerar la creación de una empresa legalmente constituida en Guatemala para poder registrar el dominio .gt y acceder a todas las pasarelas de pago locales.</p>
-    </div>
-
-    <div class="page-break"></div>
-
-    <!-- ANEXOS -->
-    <h2>Anexos</h2>
-
-    <h3>Anexo A: Capturas de Pantalla del Sitio Web</h3>
-    <p><em>(Espacio para incluir capturas de cada página del sitio web)</em></p>
-
-    <h3>Anexo B: Verificación de Dominios</h3>
-    <p><em>(Espacio para imprimir las páginas de verificación de disponibilidad de dominios)</em></p>
-
-    <h3>Anexo C: Registro en Motor de Búsqueda</h3>
-    <p><em>(Espacio para incluir la impresión de la página de registro en Google Search Console)</em></p>
-
-    <div class="page-break"></div>
-
-    <!-- FIRMAS -->
-    <div class="firma-section">
-        <div class="firma-line">
-            ___________________________<br>
-            [Nombre del Integrante 1]
-        </div>
-        <div class="firma-line">
-            ___________________________<br>
-            [Nombre del Integrante 2]
-        </div>
-    </div>
-
-    <div class="firma-section" style="margin-top: 2cm;">
-        <div class="firma-line">
-            ___________________________<br>
-            [Nombre del Integrante 3]
-        </div>
-        <div class="firma-line">
-            ___________________________<br>
-            [Nombre del Integrante 4]
-        </div>
-    </div>
-
-    <div class="firma-section" style="margin-top: 2cm;">
-        <div class="firma-line">
-            ___________________________<br>
-            [Nombre del Integrante 5]
-        </div>
-    </div>
-
-    <div style="margin-top: 3cm; text-align: center;">
-        <p><strong>Documento elaborado para el curso de Comercio Electrónico</strong><br>
-        Facultad de Ciencias Económicas - Universidad de San Carlos de Guatemala<br>
-        Semana 7 - Actividad 1 de 2</p>
-    </div>
-
-    <div class="footer-decorativo"></div>
-</body>
-</html>
+1|<!DOCTYPE html>
+2|<html lang="es">
+3|<head>
+4|    <meta charset="UTF-8">
+5|    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+6|    <title>Vertex Marketing - Trabajo Formal Semana 7</title>
+7|    <style>
+8|        @page {
+9|            margin: 2.54cm;
+10|            size: letter;
+11|        }
+12|
+13|        * {
+14|            margin: 0;
+15|            padding: 0;
+16|            box-sizing: border-box;
+17|        }
+18|
+19|        body {
+20|            font-family: 'Times New Roman', Times, serif;
+21|            font-size: 12pt;
+22|            line-height: 1.5;
+23|            color: #000;
+24|            background: #fff;
+25|            max-width: 8.5in;
+26|            margin: 0 auto;
+27|            padding: 2.54cm;
+28|        }
+29|
+30|        .page-break {
+31|            page-break-after: always;
+32|            break-after: page;
+33|        }
+34|
+35|        h1, h2, h3, h4 {
+36|            font-family: 'Arial', sans-serif;
+37|            margin-top: 1em;
+38|            margin-bottom: 0.5em;
+39|        }
+40|
+41|        h1 {
+42|            font-size: 18pt;
+43|            text-align: center;
+44|            font-weight: bold;
+45|        }
+46|
+47|        h2 {
+48|            font-size: 16pt;
+49|            font-weight: bold;
+50|            border-bottom: 2px solid #333;
+51|            padding-bottom: 0.5em;
+52|        }
+53|
+54|        h3 {
+55|            font-size: 14pt;
+56|            font-weight: bold;
+57|        }
+58|
+59|        h4 {
+60|            font-size: 12pt;
+61|            font-weight: bold;
+62|        }
+63|
+64|        p {
+65|            margin-bottom: 1em;
+66|            text-align: justify;
+67|        }
+68|
+69|        .caratula {
+70|            text-align: center;
+71|            padding: 3cm 0;
+72|        }
+73|
+74|        .caratula h1 {
+75|            font-size: 24pt;
+76|            margin-bottom: 2cm;
+77|        }
+78|
+79|        .caratula-info {
+80|            margin: 2cm 0;
+81|        }
+82|
+83|        .caratula-info p {
+84|            text-align: center;
+85|            margin: 0.5em 0;
+86|        }
+87|
+88|        .integrantes-table {
+89|            width: 100%;
+90|            border-collapse: collapse;
+91|            margin: 2cm auto;
+92|        }
+93|
+94|        .integrantes-table th,
+95|        .integrantes-table td {
+96|            border: 1px solid #000;
+97|            padding: 12px;
+98|            text-align: center;
+99|        }
+100|
+101|        .integrantes-table th {
+102|            background: #f0f0f0;
+103|            font-weight: bold;
+104|        }
+105|
+106|        .tabla-contenido {
+107|            width: 100%;
+108|            border-collapse: collapse;
+109|        }
+110|
+111|        .tabla-contenido th,
+112|        .tabla-contenido td {
+113|            border: 1px solid #000;
+114|            padding: 10px;
+115|            text-align: left;
+116|        }
+117|
+118|        .tabla-contenido th {
+119|            background: #f0f0f0;
+120|        }
+121|
+122|        .tabla-contenido td:last-child {
+123|            text-align: right;
+124|        }
+125|
+126|        table {
+127|            width: 100%;
+128|            border-collapse: collapse;
+129|            margin: 1em 0;
+130|        }
+131|
+132|        table th,
+133|        table td {
+134|            border: 1px solid #000;
+135|            padding: 10px;
+136|            text-align: left;
+137|        }
+138|
+139|        table th {
+140|            background: #f0f0f0;
+141|            font-weight: bold;
+142|        }
+143|
+144|        table tr:nth-child(even) {
+145|            background: #f9f9f9;
+146|        }
+147|
+148|        .actividad-header {
+149|            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+150|            color: white;
+151|            padding: 15px 20px;
+152|            border-radius: 8px;
+153|            margin: 2em 0 1em 0;
+154|        }
+155|
+156|        .actividad-header h2 {
+157|            border: none;
+158|            color: white;
+159|            margin: 0;
+160|        }
+161|
+162|        .prompt-box {
+163|            background: #f5f5f5;
+164|            border-left: 4px solid #667eea;
+165|            padding: 15px 20px;
+166|            margin: 1em 0;
+167|            font-family: 'Courier New', monospace;
+168|            font-size: 10pt;
+169|        }
+170|
+171|        .conclusion-item,
+172|        .recomendacion-item {
+173|            margin: 1em 0;
+174|            padding-left: 1em;
+175|        }
+176|
+177|        .conclusion-item strong,
+178|        .recomendacion-item strong {
+179|            font-weight: bold;
+180|        }
+181|
+182|        ul, ol {
+183|            margin-left: 2em;
+184|            margin-bottom: 1em;
+185|        }
+186|
+187|        li {
+188|            margin-bottom: 0.5em;
+189|        }
+190|
+191|        .firma-section {
+192|            margin-top: 3cm;
+193|            display: flex;
+194|            justify-content: space-between;
+195|        }
+196|
+197|        .firma-line {
+198|            border-top: 1px solid #000;
+199|            width: 40%;
+200|            text-align: center;
+201|            padding-top: 0.5em;
+202|        }
+203|
+204|        .watermark {
+205|            position: fixed;
+206|            top: 50%;
+207|            left: 50%;
+208|            transform: translate(-50%, -50%) rotate(-45deg);
+209|            font-size: 100pt;
+210|            color: rgba(0, 0, 0, 0.05);
+211|            z-index: -1;
+212|            pointer-events: none;
+213|        }
+214|
+215|        .header-decorativo {
+216|            background: linear-gradient(135deg, #f43f5e 0%, #8b5cf6 50%, #06b6d4 100%);
+217|            height: 10px;
+218|            margin: -2.54cm -2.54cm 2cm -2.54cm;
+219|        }
+220|
+221|        .footer-decorativo {
+222|            background: linear-gradient(135deg, #06b6d4 0%, #8b5cf6 50%, #f43f5e 100%);
+223|            height: 10px;
+224|            margin: 2cm -2.54cm -2.54cm -2.54cm;
+225|        }
+226|
+227|        .estado-disponible {
+228|            color: #059669;
+229|            font-weight: bold;
+230|        }
+231|
+232|        .estado-no-disponible {
+233|            color: #dc2626;
+234|            font-weight: bold;
+235|        }
+236|
+237|        .estado-limitado {
+238|            color: #d97706;
+239|            font-weight: bold;
+240|        }
+241|
+242|        code {
+243|            background: #f5f5f5;
+244|            padding: 2px 6px;
+245|            border-radius: 3px;
+246|            font-family: 'Courier New', monospace;
+247|        }
+248|
+249|        .nota-importante {
+250|            background: #fef3c7;
+251|            border: 2px solid #f59e0b;
+252|            padding: 15px;
+253|            border-radius: 8px;
+254|            margin: 1em 0;
+255|        }
+256|
+257|        .nota-importante strong {
+258|            color: #92400e;
+259|        }
+260|
+261|        @media print {
+262|            body {
+263|                padding: 0;
+264|                margin: 0;
+265|            }
+266|
+267|            .header-decorativo,
+268|            .footer-decorativo {
+269|                margin: 0;
+270|            }
+271|
+272|            .actividad-header {
+273|                background: #667eea !important;
+274|                -webkit-print-color-adjust: exact;
+275|                print-color-adjust: exact;
+276|            }
+277|        }
+278|    </style>
+279|</head>
+280|<body>
+281|    <div class="header-decorativo"></div>
+282|
+283|    <!-- CARÁTULA -->
+284|    <div class="caratula">
+285|        <h1>Universidad de San Carlos de Guatemala<br>Facultad de Ciencias Económicas<br>Escuela de Administración de Empresas</h1>
+286|
+287|        <div class="caratula-info">
+288|            <p><strong>Curso:</strong> Comercio Electrónico</p>
+289|            <p><strong>Tema:</strong> Sitio Web de Negocios - Vertex Marketing</p>
+290|            <p><strong>Actividad:</strong> Semana 7 - Actividad 1 de 2</p>
+291|            <p><strong>Catedrático:</strong> [Nombre del Tutor]</p>
+292|            <p><strong>Fecha de Entrega:</strong> [Fecha]</p>
+293|        </div>
+294|
+295|        <h3>Integrantes del Grupo:</h3>
+296|        <table class="integrantes-table">
+297|            <thead>
+298|                <tr>
+299|                    <th>No.</th>
+300|                    <th>Nombre del Integrante</th>
+301|                    <th>Carné</th>
+302|                </tr>
+303|            </thead>
+304|            <tbody>
+305|                <tr>
+306|                    <td>1</td>
+307|                    <td>[Nombre del Integrante 1]</td>
+308|                    <td>[Carné]</td>
+309|                </tr>
+310|                <tr>
+311|                    <td>2</td>
+312|                    <td>[Nombre del Integrante 2]</td>
+313|                    <td>[Carné]</td>
+314|                </tr>
+315|                <tr>
+316|                    <td>3</td>
+317|                    <td>[Nombre del Integrante 3]</td>
+318|                    <td>[Carné]</td>
+319|                </tr>
+320|                <tr>
+321|                    <td>4</td>
+322|                    <td>[Nombre del Integrante 4]</td>
+323|                    <td>[Carné]</td>
+324|                </tr>
+325|                <tr>
+326|                    <td>5</td>
+327|                    <td>[Nombre del Integrante 5]</td>
+328|                    <td>[Carné]</td>
+329|                </tr>
+330|            </tbody>
+331|        </table>
+332|
+333|        <p style="margin-top: 3cm;"><strong>Ciudad de Guatemala, Guatemala</strong></p>
+334|    </div>
+335|
+336|    <div class="page-break"></div>
+337|
+338|    <!-- TABLA DE CONTENIDO -->
+339|    <h2>Tabla de Contenido</h2>
+340|    <table class="tabla-contenido">
+341|        <thead>
+342|            <tr>
+343|                <th>Sección</th>
+344|                <th>Página</th>
+345|            </tr>
+346|        </thead>
+347|        <tbody>
+348|            <tr><td>Carátula</td><td>1</td></tr>
+349|            <tr><td>Tabla de Contenido</td><td>2</td></tr>
+350|            <tr><td>Introducción</td><td>3</td></tr>
+351|            <tr><td><strong>Actividad 1:</strong> Propuesta de Negocio</td><td>4</td></tr>
+352|            <tr><td><strong>Actividad 2:</strong> Comparativa de Hosting</td><td>14</td></tr>
+353|            <tr><td><strong>Actividad 3:</strong> Nombre y Dominio</td><td>17</td></tr>
+354|            <tr><td><strong>Actividad 4:</strong> Dominio .gt</td><td>20</td></tr>
+355|            <tr><td><strong>Actividad 5:</strong> Pasarelas de Pago</td><td>22</td></tr>
+356|            <tr><td><strong>Actividad 6:</strong> Vínculos del Grupo</td><td>27</td></tr>
+357|            <tr><td><strong>Actividad 7:</strong> Bibliografía APA</td><td>28</td></tr>
+358|            <tr><td>Conclusiones</td><td>30</td></tr>
+359|            <tr><td>Recomendaciones</td><td>31</td></tr>
+360|        </tbody>
+361|    </table>
+362|
+363|    <div class="page-break"></div>
+364|
+365|    <!-- INTRODUCCIÓN -->
+366|    <h2>Introducción</h2>
+367|    <p>El presente documento tiene como objetivo desarrollar el trabajo formal correspondiente a la Semana 7 del curso de Comercio Electrónico, específicamente la Actividad 1 de 2: "Publicar sitio de negocios en internet".</p>
+368|
+369|    <p>En este trabajo se presenta <strong>Vertex Marketing</strong>, una agencia de marketing digital que ofrece servicios profesionales de gestión de redes sociales, SEO, SEM, email marketing, producción de video y analytics. El sitio web fue desarrollado utilizando el framework Next.js 16, con un diseño moderno y colorido que sigue los principios de Max Pro UI.</p>
+370|
+371|    <p>El documento está estructurado en 7 actividades que cubren todos los aspectos requeridos para el establecimiento de un negocio digital, desde la propuesta inicial hasta los aspectos técnicos de implementación, incluyendo hosting, dominios, pasarelas de pago y la documentación formal del proyecto.</p>
+372|
+373|    <p>Vertex Marketing nace como respuesta a la creciente demanda de servicios de marketing digital en el mercado guatemalteco, donde las pequeñas y medianas empresas buscan profesionalizar su presencia online para competir en el entorno digital actual.</p>
+374|
+375|    <div class="page-break"></div>
+376|
+377|    <!-- ACTIVIDAD 1 -->
+378|    <div class="actividad-header">
+379|        <h2>Actividad 1: Propuesta de Negocio</h2>
+380|    </div>
+381|
+382|    <h3>Esquema Inicial de la Idea de Negocio</h3>
+383|
+384|    <h4>Capítulo 1: Resumen Ejecutivo</h4>
+385|    <p><strong>Vertex Marketing</strong> es una agencia de marketing digital que ofrece servicios integrales para empresas establecer y fortalecer su presencia en internet. Nuestra propuesta de valor se centra en ofrecer soluciones 360° que abarcan desde la gestión de redes sociales hasta el análisis de datos para la toma de decisiones.</p>
+386|
+387|    <p><strong>Misión:</strong> Proporcionar estrategias de marketing digital innovadoras y efectivas que impulsen el crecimiento de nuestros clientes.</p>
+388|
+389|    <p><strong>Visión:</strong> Ser la agencia de marketing digital líder en Guatemala, reconocida por nuestra creatividad, resultados medibles y compromiso con el éxito del cliente.</p>
+390|
+391|    <p><strong>Valores:</strong></p>
+392|    <ul>
+393|        <li>Innovación constante</li>
+394|        <li>Transparencia en resultados</li>
+395|        <li>Compromiso con el cliente</li>
+396|        <li>Creatividad sin límites</li>
+397|        <li>Orientación a resultados</li>
+398|    </ul>
+399|
+400|    <h4>Capítulo 2: Descripción del Negocio</h4>
+401|
+402|    <h5>2.1 Naturaleza del Negocio</h5>
+403|    <p>Vertex Marketing opera como una agencia de servicios digitales, lo que significa que no requiere inventario físico ni infraestructura costosa. Nuestro principal activo es el conocimiento y la creatividad de nuestro equipo.</p>
+404|
+405|    <h5>2.2 Servicios Ofrecidos</h5>
+406|    <table>
+407|        <thead>
+408|            <tr>
+409|                <th>Servicio</th>
+410|                <th>Descripción</th>
+411|                <th>Precio Base</th>
+412|            </tr>
+413|        </thead>
+414|        <tbody>
+415|            <tr>
+416|                <td>Gestión de Redes Sociales</td>
+417|                <td>Content calendar, diseño gráfico, community management</td>
+418|                <td>Q3,900/mes</td>
+419|            </tr>
+420|            <tr>
+421|                <td>SEO y Posicionamiento</td>
+422|                <td>Auditoría, optimización on-page, link building</td>
+423|                <td>Q5,460/mes</td>
+424|            </tr>
+425|            <tr>
+426|                <td>Publicidad Digital (SEM)</td>
+427|                <td>Campañas en Google Ads, Facebook Ads, Instagram Ads</td>
+428|                <td>15% de inversión</td>
+429|            </tr>
+430|            <tr>
+431|                <td>Email Marketing</td>
+432|                <td>Diseño, segmentación, automatización</td>
+433|                <td>Q3,100/mes</td>
+434|            </tr>
+435|            <tr>
+436|                <td>Producción de Video</td>
+437|                <td>Guion, grabación, edición, post-producción</td>
+438|                <td>Q2,325/video</td>
+439|            </tr>
+440|            <tr>
+441|                <td>Analytics y Reportes</td>
+442|                <td>Dashboards, KPIs, insights accionables</td>
+443|                <td>Q2,712/mes</td>
+444|            </tr>
+445|        </tbody>
+446|    </table>
+447|
+448|    <h5>2.3 Modelo de Negocio</h5>
+449|    <p>Nuestro modelo de ingresos se basa en:</p>
+450|    <ol>
+451|        <li><strong>Retainers mensuales</strong> para servicios continuos (redes sociales, SEO, email marketing)</li>
+452|        <li><strong>Proyectos puntuales</strong> para producciones específicas (videos, branding)</li>
+453|        <li><strong>Comisiones por gestión</strong> de publicidad pagada</li>
+454|    </ol>
+455|
+456|    <h4>Capítulo 3: Análisis de Mercado</h4>
+457|
+458|    <h5>3.1 Mercado Objetivo</h5>
+459|    <p><strong>Segmento Principal:</strong> Pequeñas y medianas empresas (PYMES) en Guatemala</p>
+460|
+461|    <p><strong>Características del Target:</strong></p>
+462|    <ul>
+463|        <li>Empresas con facturación anual entre Q400,000 y Q4,000,000</li>
+464|        <li>Sectores: retail, servicios profesionales, gastronomía, educación</li>
+465|        <li>Edad del decisor: 25-55 años</li>
+466|        <li>Nivel de digitalización: básico a intermedio</li>
+467|        <li>Presupuesto mensual para marketing: Q3,900 - Q39,000</li>
+468|    </ul>
+469|
+470|    <h5>3.2 Competencia</h5>
+471|    <table>
+472|        <thead>
+473|            <tr>
+474|                <th>Competidor</th>
+475|                <th>Fortalezas</th>
+476|                <th>Debilidades</th>
+477|            </tr>
+478|        </thead>
+479|        <tbody>
+480|            <tr>
+481|                <td>Agencias tradicionales</td>
+482|                <td>Experiencia, cartera establecida</td>
+483|                <td>Precios altos, poca flexibilidad</td>
+484|            </tr>
+485|            <tr>
+486|                <td>Freelancers</td>
+487|                <td>Precios bajos, atención personalizada</td>
+488|                <td>Capacidad limitada, servicios básicos</td>
+489|            </tr>
+490|            <tr>
+491|                <td>Agencias internacionales</td>
+492|                <td>Tecnología avanzada, casos de éxito</td>
+493|                <td>Costos elevados, sin presencia local</td>
+494|            </tr>
+495|        </tbody>
+496|    </table>
+497|
+498|    <h5>3.3 Ventaja Competitiva</h5>
+499|    <ol>
+500|        <li><strong>Precios competitivos</strong> adaptados al mercado local</li>
+501|
